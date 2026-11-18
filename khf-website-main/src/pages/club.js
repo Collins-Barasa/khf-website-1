@@ -1,7 +1,7 @@
 import { clubs } from '../data.js';
 
 export default function clubPage({ params }) {
-  const name = params.get('id') || 'Nairobi United';
+  const name = params.get('id') || 'Daystar university club';
   const c = clubs.find(x => x.name === name) || clubs[0];
 
   return `
