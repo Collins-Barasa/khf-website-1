@@ -165,9 +165,9 @@ export default function home() {
       <div class="grid gap-6 md:grid-cols-3">
         ${['Kenya Senior Men', 'Kenya Senior Women', 'Junior & Youth'].map((t, i) => {
           const imgs = [
-            'https://images.unsplash.com/photo-1547347298-4074fc3086f0?w=800&q=80',
-            'https://images.unsplash.com/photo-1552667466-07770ae110d0?w=800&q=80',
-            'https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&q=80',
+            'https://www.michezoafrika.com/newsimages/GSU-VS-THIKA-.JPG',
+            'https://www.michezoafrika.com/newsimages/COACH-MWATHI-2.JPG',
+            'https://www.mod.go.ke/news/ulinzi-sharks-clinch-national-handball-super-cup-2/',
           ];
           const slugs = ['senior-men', 'senior-women', 'junior'];
           return `
