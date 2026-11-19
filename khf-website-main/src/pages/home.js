@@ -193,7 +193,9 @@ export default function home() {
       </div>
       <div class="grid gap-6 md:grid-cols-3">
         ${[
-          { img: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&q=80', t: 'Match Highlights: Nairobi United vs Mombasa HC' },
+          { img: ''https://www.michezoafrika.com/newsimages/GSU-VS-THIKA-.JPG',
+            'https://www.michezoafrika.com/newsimages/COACH-MWATHI-2.JPG',
+            'https://www.mod.go.ke/news/ulinzi-sharks-clinch-national-handball-super-cup-2/',', t: 'Match Highlights: Nairobi Water vs Ulinzi ' },
           { img: 'https://images.unsplash.com/photo-1552667466-07770ae110d0?w=800&q=80', t: "Interview: Coach on Women's League Growth" },
           { img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80', t: 'Grassroots: School Handball Festival' },
         ].map(m => `
