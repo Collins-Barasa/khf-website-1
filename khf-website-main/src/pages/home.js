@@ -1,9 +1,112 @@
-import { news, fixtures, standings } from '../data.js';
+import {
+  news,
+  fixtures,
+  standings,
+  players,
+  nationalTeams,
+  partners,
+  getClub,
+  getCompetition,
+} from '../data.js';
 
+/* ==========================================================================
+ * helpers
+ * Everything that used to compare display names ("Premier League men" vs
+ * "premier league Men") now works on slugs, so lookups can never miss.
+ * ========================================================================== */
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+const esc = (s) =>
+  String(s ?? '').replace(/[&<>"']/g, (c) =>
+    ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+function fmtDate(iso) {
+  const [y, m, d] = String(iso ?? '').split('-').map(Number);
+  if (!y || !m || !d) return String(iso ?? '');
+  return `${d} ${MONTHS[m - 1]} ${y}`;
+}
+
+const compName = (slug) => getCompetition(slug)?.name ?? String(slug ?? '');
+
+/** club slug -> short label; passes through plain names and 'TBD' */
+function teamLabel(ref) {
+  if (!ref || ref === 'TBD') return 'TBD';
+  const club = getClub(ref);
+  return club ? club.short : String(ref);
+}
+
+const clubHref = (ref) => {
+  const club = getClub(ref);
+  return club ? `#/club?id=${encodeURIComponent(club.slug)}` : null;
+};
+
+const isImageUrl = (url) =>
+  typeof url === 'string' &&
+  /^https?:\/\//i.test(url) &&
+  /\.(jpe?g|png|webp|avif|gif)(\?.*)?$/i.test(url);
+
+/** background-image value that degrades to a gradient instead of a broken photo */
+function bg(url, angle = 135) {
+  const fallback = `linear-gradient(${angle}deg,#0b0b0b,#3b3b3b)`;
+  return isImageUrl(url) ? `url('${url}'), ${fallback}` : fallback;
+}
+
+const initials = (str, n = 2) => {
+  const out = String(str ?? '')
+    .replace(/[^A-Za-z0-9 ]/g, ' ')
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((w) => w[0])
+    .join('')
+    .slice(0, n)
+    .toUpperCase();
+  return out || 'KHF';
+};
+
+/** one side of a fixture; renders a muted TBD instead of a fake club */
+function side(ref) {
+  const label = teamLabel(ref);
+  if (label === 'TBD') {
+    return `<span class="font-semibold text-sm text-slate-400 italic">TBD</span>`;
+  }
+  const href = clubHref(ref);
+  return href
+    ? `<a href="${href}" class="font-semibold text-sm hover:text-khf-red">${esc(label)}</a>`
+    : `<span class="font-semibold text-sm">${esc(label)}</span>`;
+}
+
+/** image area with a deliberate-looking fallback instead of a broken <img> */
+function mediaBox(url, label = 'KHF') {
+  const ok = isImageUrl(url);
+  return `<div class="w-full aspect-video bg-cover bg-center relative" style="background-image:${bg(url)}">
+      ${ok ? '' : `<span class="absolute inset-0 grid place-items-center text-white/25 font-head text-xl uppercase tracking-[4px]">${esc(label)}</span>`}
+    </div>`;
+}
+
+const playerBlurb = (p) => {
+  if (p.goals != null) return `${p.stat ?? 'Scorer'} · ${p.goals} goals`;
+  if (p.savePct != null) return `${p.stat ?? 'Goalkeeper'} · ${p.savePct}% save rate`;
+  return p.stat ?? '';
+};
+
+const byDateAsc = (a, b) => String(a.date).localeCompare(String(b.date));
+const byDateDesc = (a, b) => String(b.date).localeCompare(String(a.date));
+
+/* ==========================================================================
+ * page
+ * ========================================================================== */
 export default function home() {
-  const upcoming = fixtures.filter(f => f.status === 'Scheduled').slice(0, 3);
-  const results = fixtures.filter(f => f.status === 'Completed').slice(0, 3);
-  const top5 = standings['premier-men'];
+  const upcoming = fixtures.filter((f) => f.status === 'Scheduled').sort(byDateAsc).slice(0, 3);
+  const results = fixtures.filter((f) => f.status === 'Completed').sort(byDateDesc).slice(0, 3);
+  const top5 = standings['premier-men'] ?? [];
+
+  // table leaders come from standings, not from hand-typed cards
+  const leaders = ['premier-men', 'premier-women']
+    .map((slug) => ({ slug, comp: getCompetition(slug), row: (standings[slug] ?? [])[0] }))
+    .filter((x) => x.row);
+
+  const featuredPlayers = players.slice(0, 2);
 
   return `
   <!-- HERO -->
@@ -34,16 +137,20 @@ export default function home() {
         <a href="#/news" class="text-khf-red font-bold text-sm">All news →</a>
       </div>
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        ${news.map((n, i) => `
+        ${news
+          .map(
+            (n, i) => `
           <article class="card ${i === 0 ? 'lg:col-span-2' : ''}">
-            <img src="${n.img}" alt="${n.title}" class="w-full aspect-video object-cover"/>
+            <a href="#/article?id=${encodeURIComponent(n.id)}" class="block overflow-hidden">${mediaBox(n.img, 'KHF News')}</a>
             <div class="p-5 space-y-2">
-              <span class="${n.tag}">${n.category}</span>
-              <h3 class="text-base font-semibold leading-snug"><a href="#/article?id=${n.id}" class="hover:text-khf-red">${n.title}</a></h3>
-              <p class="text-sm text-slate-500">${n.excerpt}</p>
-              <time class="text-xs text-slate-400">${n.date}</time>
+              <span class="${esc(n.tag)}">${esc(n.category)}</span>
+              <h3 class="text-base font-semibold leading-snug"><a href="#/article?id=${encodeURIComponent(n.id)}" class="hover:text-khf-red">${esc(n.title)}</a></h3>
+              <p class="text-sm text-slate-500">${esc(n.excerpt)}</p>
+              <time class="text-xs text-slate-400" datetime="${esc(n.date)}">${fmtDate(n.date)}</time>
             </div>
-          </article>`).join('')}
+          </article>`
+          )
+          .join('')}
       </div>
     </div>
   </section>
@@ -58,21 +165,29 @@ export default function home() {
           <a href="#/fixtures" class="text-khf-red text-sm font-bold">All →</a>
         </div>
         <ul class="space-y-3">
-          ${upcoming.map(f => `
+          ${
+            upcoming.length
+              ? upcoming
+                  .map(
+                    (f) => `
             <li class="fixture">
               <div class="flex gap-3 text-[11px] text-slate-500 uppercase">
-                <span class="font-bold text-khf-red">${f.comp}</span><span>${f.round}</span>
+                <span class="font-bold text-khf-red">${esc(compName(f.comp))}</span><span>${esc(f.round)}</span>
               </div>
               <div class="flex items-center justify-between gap-2">
-                <span class="font-semibold text-sm">${f.home}</span>
+                ${side(f.home)}
                 <span class="text-xs text-slate-400">vs</span>
-                <span class="font-semibold text-sm">${f.away}</span>
+                ${side(f.away)}
               </div>
               <div class="text-xs text-slate-500 flex flex-col gap-0.5">
-                <span>📅 ${f.date} · ${f.time}</span><span>📍 ${f.venue}</span>
+                <span>📅 ${fmtDate(f.date)} · ${esc(f.time)}</span><span>📍 ${esc(f.venue)}</span>
               </div>
-              <span class="status-scheduled">${f.status}</span>
-            </li>`).join('')}
+              <span class="status-scheduled">${esc(f.status)}</span>
+            </li>`
+                  )
+                  .join('')
+              : '<li class="text-sm text-slate-500">No fixtures scheduled yet.</li>'
+          }
         </ul>
       </div>
 
@@ -83,16 +198,24 @@ export default function home() {
           <a href="#/fixtures" class="text-khf-red text-sm font-bold">All →</a>
         </div>
         <ul class="space-y-3">
-          ${results.map(f => `
+          ${
+            results.length
+              ? results
+                  .map(
+                    (f) => `
             <li class="fixture">
-              <div class="text-[11px] font-bold text-khf-red uppercase">${f.comp}</div>
+              <div class="text-[11px] font-bold text-khf-red uppercase">${esc(compName(f.comp))}</div>
               <div class="flex items-center justify-between gap-2">
-                <span class="font-semibold text-sm">${f.home}</span>
-                <span class="font-head text-xl font-bold bg-khf-black text-white px-3 py-0.5 rounded">${f.homeScore} – ${f.awayScore}</span>
-                <span class="font-semibold text-sm">${f.away}</span>
+                ${side(f.home)}
+                <span class="font-head text-xl font-bold bg-khf-black text-white px-3 py-0.5 rounded">${f.homeScore ?? 0} – ${f.awayScore ?? 0}</span>
+                ${side(f.away)}
               </div>
-              <span class="status-completed">Full Time</span>
-            </li>`).join('')}
+              <span class="status-completed">Full Time · ${fmtDate(f.date)}</span>
+            </li>`
+                  )
+                  .join('')
+              : '<li class="text-sm text-slate-500">No results yet.</li>'
+          }
         </ul>
       </div>
 
@@ -105,14 +228,22 @@ export default function home() {
         <table class="w-full table-mini">
           <thead><tr><th>#</th><th>Team</th><th>P</th><th>GD</th><th>PTS</th></tr></thead>
           <tbody>
-            ${top5.map(t => `
+            ${top5
+              .map((t) => {
+                const href = t.club ? `#/club?id=${encodeURIComponent(t.club)}` : null;
+                const name = href
+                  ? `<a href="${href}" class="hover:text-khf-red font-medium">${esc(t.team)}</a>`
+                  : `<span class="font-medium">${esc(t.team)}</span>`;
+                return `
               <tr>
                 <td class="font-bold">${t.pos}</td>
-                <td><a href="#/club?id=${t.team}" class="hover:text-khf-red font-medium">${t.team}</a></td>
+                <td>${name}</td>
                 <td>${t.p}</td>
                 <td>${t.gd > 0 ? '+' : ''}${t.gd}</td>
                 <td class="font-bold">${t.pts}</td>
-              </tr>`).join('')}
+              </tr>`;
+              })
+              .join('')}
           </tbody>
         </table>
       </div>
@@ -127,30 +258,32 @@ export default function home() {
         <a href="#/statistics" class="text-khf-red font-bold text-sm">Statistics →</a>
       </div>
       <div class="grid gap-6 grid-cols-2 md:grid-cols-4">
+        ${featuredPlayers
+          .map((p) => {
+            const club = getClub(p.club);
+            const avatar = isImageUrl(p.img)
+              ? `<div class="w-20 h-20 rounded-full bg-cover bg-center mx-auto mb-3" style="background-image:url('${p.img}')"></div>`
+              : `<div class="w-20 h-20 rounded-full bg-khf-black text-white font-head text-2xl font-bold grid place-items-center mx-auto mb-3">${initials(p.name)}</div>`;
+            return `
         <div class="card p-5 text-center">
-          <div class="w-20 h-20 rounded-full bg-cover bg-center mx-auto mb-3" style="background-image:url('https://images.unsplash.com/photo-1546519638-68e109498ffc?w=400&q=80')"></div>
-          <h3 class="font-semibold">Brian Otieno</h3>
-          <p class="text-xs text-slate-500">Left Back · Nairobi Water</p>
-          <p class="text-sm font-bold text-khf-red mt-1">Top Scorer · 87 goals</p>
-        </div>
+          ${avatar}
+          <h3 class="font-semibold">${esc(p.name)}</h3>
+          <p class="text-xs text-slate-500">${esc(p.position)} · ${esc(club ? club.name : p.club)}</p>
+          <p class="text-sm font-bold text-khf-red mt-1">${esc(playerBlurb(p))}</p>
+        </div>`;
+          })
+          .join('')}
+        ${leaders
+          .map(
+            (l, i) => `
         <div class="card p-5 text-center">
-          <div class="w-20 h-20 rounded-full bg-cover bg-center mx-auto mb-3" style="background-image:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80')"></div>
-          <h3 class="font-semibold">Peace Simiyu</h3>
-          <p class="text-xs text-slate-500">Goalkeeper · Daystar</p>
-          <p class="text-sm font-bold text-khf-red mt-1">Best GK · 42% save rate</p>
-        </div>
-        <div class="card p-5 text-center">
-          <div class="w-20 h-20 rounded-full bg-khf-red text-white font-head text-2xl font-bold grid place-items-center mx-auto mb-3">NU</div>
-          <h3 class="font-semibold">Nairobi Water</h3>
-          <p class="text-xs text-slate-500">Premier League Men</p>
-          <p class="text-sm font-bold text-khf-red mt-1">Leaders · 30 pts</p>
-        </div>
-        <div class="card p-5 text-center">
-          <div class="w-20 h-20 rounded-full bg-khf-green text-white font-head text-2xl font-bold grid place-items-center mx-auto mb-3">KQ</div>
-          <h3 class="font-semibold">Nairobi water</h3>
-          <p class="text-xs text-slate-500">Premier League Women</p>
-          <p class="text-sm font-bold text-khf-red mt-1">Leaders · 28 pts</p>
-        </div>
+          <div class="w-20 h-20 rounded-full ${i % 2 === 0 ? 'bg-khf-red' : 'bg-khf-green'} text-white font-head text-2xl font-bold grid place-items-center mx-auto mb-3">${initials(l.row.club ? (getClub(l.row.club)?.name ?? l.row.team) : l.row.team)}</div>
+          <h3 class="font-semibold">${esc(l.row.club ? (getClub(l.row.club)?.name ?? l.row.team) : l.row.team)}</h3>
+          <p class="text-xs text-slate-500">${esc(l.comp ? l.comp.name : l.slug)}</p>
+          <p class="text-sm font-bold text-khf-red mt-1">Leaders · ${l.row.pts} pts</p>
+        </div>`
+          )
+          .join('')}
       </div>
     </div>
   </section>
@@ -163,23 +296,19 @@ export default function home() {
         <a href="#/national-teams" class="text-khf-red font-bold text-sm">Explore →</a>
       </div>
       <div class="grid gap-6 md:grid-cols-3">
-        ${['Kenya Senior Men', 'Kenya Senior Women', 'Junior & Youth'].map((t, i) => {
-          const imgs = [
-            'https://www.michezoafrika.com/newsimages/GSU-VS-THIKA-.JPG',
-            'https://www.michezoafrika.com/newsimages/COACH-MWATHI-2.JPG',
-            'https://www.mod.go.ke/news/ulinzi-sharks-clinch-national-handball-super-cup-2/',
-          ];
-          const slugs = ['senior-men', 'senior-women', 'junior'];
-          return `
-          <a href="#/national-team?team=${slugs[i]}" class="relative h-56 rounded-xl overflow-hidden group">
-            <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" style="background-image:url('${imgs[i]}')"></div>
+        ${nationalTeams
+          .map(
+            (t) => `
+          <a href="#/national-team?team=${encodeURIComponent(t.slug)}" class="relative h-56 rounded-xl overflow-hidden group">
+            <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" style="background-image:${bg(t.img)}"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-khf-black via-khf-black/50 to-transparent"></div>
             <div class="absolute bottom-0 p-5">
-              <h3 class="font-head text-2xl uppercase">${t}</h3>
+              <h3 class="font-head text-2xl uppercase">${esc(t.name)}</h3>
               <p class="text-xs text-slate-300">Fixtures · Squad · Results</p>
             </div>
-          </a>`;
-        }).join('')}
+          </a>`
+          )
+          .join('')}
       </div>
     </div>
   </section>
@@ -193,18 +322,22 @@ export default function home() {
       </div>
       <div class="grid gap-6 md:grid-cols-3">
         ${[
-          { img: 'https://www.michezoafrika.com/newsimages/COACH-MWATHI-2.JPG', t: 'Match Highlights: Nairobi GSU vs Ulinzi ' },
+          { img: 'https://www.michezoafrika.com/newsimages/COACH-MWATHI-2.JPG', t: 'Match Highlights: GSU vs Ulinzi' },
           { img: 'https://images.unsplash.com/photo-1552667466-07770ae110d0?w=800&q=80', t: "Interview: Coach on Women's League Growth" },
           { img: 'https://www.michezoafrika.com/newsimages/GSU-VS-THIKA-.JPG', t: 'Grassroots: School Handball Festival' },
-        ].map(m => `
+        ]
+          .map(
+            (m) => `
           <div class="group cursor-pointer">
-            <div class="relative aspect-video rounded-xl overflow-hidden bg-cover bg-center" style="background-image:url('${m.img}')">
+            <div class="relative aspect-video rounded-xl overflow-hidden bg-cover bg-center" style="background-image:${bg(m.img)}">
               <div class="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition grid place-items-center">
                 <span class="w-14 h-14 rounded-full bg-white/90 text-khf-red text-2xl grid place-items-center shadow-lg">▶</span>
               </div>
             </div>
-            <h3 class="mt-3 font-semibold text-sm">${m.t}</h3>
-          </div>`).join('')}
+            <h3 class="mt-3 font-semibold text-sm">${esc(m.t)}</h3>
+          </div>`
+          )
+          .join('')}
       </div>
     </div>
   </section>
@@ -217,10 +350,15 @@ export default function home() {
         <a href="#/partners" class="text-khf-red font-bold text-sm">Become a partner →</a>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
-        ${Array(5).fill(0).map((_, i) => `
-          <div class="h-20 bg-white rounded-lg shadow grid place-items-center text-slate-400 font-head text-lg tracking-widest">
-            SPONSOR ${i + 1}
-          </div>`).join('')}
+        ${partners
+          .map(
+            (p) => `
+          <div class="h-20 bg-white rounded-lg shadow grid place-items-center px-2 text-center">
+            <span class="font-head text-lg tracking-widest text-slate-500 uppercase">${esc(p.name)}</span>
+            <span class="text-[10px] uppercase tracking-wider text-slate-400">${esc(p.tier)}</span>
+          </div>`
+          )
+          .join('')}
       </div>
     </div>
   </section>
@@ -232,9 +370,9 @@ export default function home() {
         <h2 class="font-head text-3xl uppercase">Stay in the game</h2>
         <p class="text-white/90 text-sm mt-1">Get fixtures, results and federation news in your inbox.</p>
       </div>
-      <form onsubmit="event.preventDefault(); this.reset(); alert('Subscribed! (demo)');" class="flex gap-2 w-full md:w-auto">
-        <input type="email" required placeholder="Your email address" class="px-4 py-3 rounded-lg text-khf-black w-full md:w-72 outline-none"/>
-        <button class="bg-khf-black text-white font-bold px-5 rounded-lg hover:bg-khf-dark">Subscribe</button>
+      <form id="newsletter-form" class="flex gap-2 w-full md:w-auto" novalidate>
+        <input type="email" name="email" required placeholder="Your email address" aria-label="Email address" class="px-4 py-3 rounded-lg text-khf-black w-full md:w-72 outline-none"/>
+        <button type="button" data-newsletter-submit class="bg-khf-black text-white font-bold px-5 rounded-lg hover:bg-khf-dark">Subscribe</button>
       </form>
     </div>
   </section>`;
