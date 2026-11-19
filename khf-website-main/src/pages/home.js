@@ -130,24 +130,24 @@ export default function home() {
         <div class="card p-5 text-center">
           <div class="w-20 h-20 rounded-full bg-cover bg-center mx-auto mb-3" style="background-image:url('https://images.unsplash.com/photo-1546519638-68e109498ffc?w=400&q=80')"></div>
           <h3 class="font-semibold">Brian Otieno</h3>
-          <p class="text-xs text-slate-500">Left Back · Nairobi United</p>
+          <p class="text-xs text-slate-500">Left Back · Nairobi Water</p>
           <p class="text-sm font-bold text-khf-red mt-1">Top Scorer · 87 goals</p>
         </div>
         <div class="card p-5 text-center">
           <div class="w-20 h-20 rounded-full bg-cover bg-center mx-auto mb-3" style="background-image:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80')"></div>
-          <h3 class="font-semibold">Faith Wanjiku</h3>
-          <p class="text-xs text-slate-500">Goalkeeper · Nakuru Stars</p>
+          <h3 class="font-semibold">Peace Simiyu</h3>
+          <p class="text-xs text-slate-500">Goalkeeper · Daystar</p>
           <p class="text-sm font-bold text-khf-red mt-1">Best GK · 42% save rate</p>
         </div>
         <div class="card p-5 text-center">
           <div class="w-20 h-20 rounded-full bg-khf-red text-white font-head text-2xl font-bold grid place-items-center mx-auto mb-3">NU</div>
-          <h3 class="font-semibold">Nairobi United</h3>
+          <h3 class="font-semibold">Nairobi Water</h3>
           <p class="text-xs text-slate-500">Premier League Men</p>
           <p class="text-sm font-bold text-khf-red mt-1">Leaders · 30 pts</p>
         </div>
         <div class="card p-5 text-center">
           <div class="w-20 h-20 rounded-full bg-khf-green text-white font-head text-2xl font-bold grid place-items-center mx-auto mb-3">KQ</div>
-          <h3 class="font-semibold">Kisumu Queens</h3>
+          <h3 class="font-semibold">Nairobi water</h3>
           <p class="text-xs text-slate-500">Premier League Women</p>
           <p class="text-sm font-bold text-khf-red mt-1">Leaders · 28 pts</p>
         </div>
