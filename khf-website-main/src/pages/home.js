@@ -112,9 +112,9 @@ export default function home() {
   <!-- HERO -->
   <section class="relative min-h-[85vh] flex items-center overflow-hidden">
     <div class="absolute inset-0">
-      <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-100 transition-opacity duration-1000" style="background-image:url('https://www.google.com/imgres?q=kenya%20handball%20federation&imgurl=https%3A%2F%2Flookaside.instagram.com%2Fseo%2Fgoogle_widget%2Fcrawler%2F%3Fmedia_id%3D4019247549078972613&imgrefurl=https%3A%2F%2Fwww.instagram.com%2Fp%2FDfHPFnbNijF%2F&docid=9TNk_LIS_gPc3M&tbnid=WhzJrOmOXZsmpM&vet=12ahUKEwi0q8Dlg5SYAxWa_rsIHfAwB44QnPAOegQIMhAA..i&w=1080&h=1080&hcb=2&itg=1&ved=2ahUKEwi0q8Dlg5SYAxWa_rsIHfAwB44QnPAOegQIMhAA')"></div>
-      <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image:url('https://www.google.com/imgres?q=kenya%20handball%20federation%20daystar&imgurl=https%3A%2F%2Flookaside.fbsbx.com%2Flookaside%2Fcrawler%2Fmedia%2F%3Fmedia_id%3D1703986281195835&imgrefurl=https%3A%2F%2Fwww.facebook.com%2Fkenyahandballfederation%2Fposts%2Fdaystar-vs-lions-men%2F1703988627862267%2F&docid=8X1HCHWXUe6TDM&tbnid=vIvo71pLmlWVeM&vet=12ahUKEwjboJKjhpSYAxUVnf0HHc8AA0IQnPAOegUImwEQAA..i&w=1600&h=1066&hcb=2&itg=1&ved=2ahUKEwjboJKjhpSYAxUVnf0HHc8AA0IQnPAOegUImwEQAA')"></div>
-      <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image:url('https://www.alamy.com/stock-photo/joan-akinyi-kenya-handball-federation-national-women-league.html')"></div>
+      <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-100 transition-opacity duration-1000" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6WZdEMpj4YnllJbLLq0f0ynlUH-dgEzARWR-U97asyg&s=10')"></div>
+      <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRomnlZTP1KXdr8-KkHbex0GonmjJvSmuD3hUbOzt9pmQ&s=10')"></div>
+      <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkiJSUGLmom3b0rPKYXOzXyU5raBcG4TWmdp-1l9e2HQ&s=10')"></div>
     </div>
     <div class="absolute inset-0 bg-gradient-to-r from-khf-black/95 via-khf-black/65 to-khf-black/20"></div>
     <div class="relative container-x text-white py-16 max-w-3xl">
