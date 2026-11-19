@@ -1,21 +1,29 @@
-import { standings } from '../data.js';
+import { getClub } from '../data.js';
+
+/* ==========================================================================
+ * One squad list, two derived leaderboards.
+ * Keeping a single source means a player can never show up as a top scorer
+ * and a best goalkeeper at the same time, and the clubs are guaranteed to be
+ * real entries from data.js instead of invented team names.
+ * ========================================================================== */
+const squad = [
+  { name: 'Amos Okwako',        club: 'daystar-men', position: 'Left Back',   goals: 87 },
+  { name: 'Mwathi Andrew Kibe', club: 'gsu-men',     position: 'Right Back',  goals: 79 },
+  { name: 'Andrew Makwa',       club: 'ulinzi-men',  position: 'Centre Back', goals: 68 },
+  { name: 'Collins Simiyu',     club: 'ncpb-men',    position: 'Goalkeeper',  savePct: 42 },
+  { name: 'Brandon Barasa',     club: 'kisiwa-men',  position: 'Goalkeeper',  savePct: 39 },
+];
+
+const topScorers = squad.filter((p) => p.goals != null).sort((a, b) => b.goals - a.goals);
+const topKeepers = squad.filter((p) => p.savePct != null).sort((a, b) => b.savePct - a.savePct);
+
+const clubName = (slug) => getClub(slug)?.short ?? slug;
+
+const esc = (s) =>
+  String(s ?? '').replace(/[&<>"']/g, (c) =>
+    ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 export default function statistics() {
-  const topScorers = [
-    { name: 'Brian Otieno', club: 'Nairobi United', goals: 87 },
-    { name: 'Kevin Mwangi', club: 'Mombasa HC', goals: 79 },
-    { name: 'Samuel Ochieng', club: 'Kisumu HC', goals: 74 },
-    { name: 'David Kimani', club: 'Eldoret HC', goals: 68 },
-    { name: 'Peter Wekesa', club: 'Thika Warriors', goals: 61 },
-  ];
-
-  const topKeepers = [
-    { name: 'Faith Wanjiku', club: 'Nakuru Stars', save: '42%' },
-    { name: 'John Kamau', club: 'Nairobi United', save: '39%' },
-    { name: 'Mary Achieng', club: 'Kisumu Queens', save: '37%' },
-    { name: 'James Otieno', club: 'Mombasa HC', save: '35%' },
-  ];
-
   return `
   <section class="page-hero">
     <div class="relative container-x">
@@ -31,8 +39,17 @@ export default function statistics() {
         <table class="w-full table-mini">
           <thead><tr><th>#</th><th>Player</th><th>Club</th><th>Goals</th></tr></thead>
           <tbody>
-            ${topScorers.map((p, i) => `
-              <tr><td class="font-bold">${i + 1}</td><td class="font-medium">${p.name}</td><td class="text-slate-500">${p.club}</td><td class="font-bold">${p.goals}</td></tr>`).join('')}
+            ${topScorers
+              .map(
+                (p, i) => `
+              <tr>
+                <td class="font-bold">${i + 1}</td>
+                <td class="font-medium">${esc(p.name)}</td>
+                <td class="text-slate-500">${esc(clubName(p.club))}</td>
+                <td class="font-bold">${p.goals}</td>
+              </tr>`
+              )
+              .join('')}
           </tbody>
         </table>
       </div>
@@ -41,8 +58,17 @@ export default function statistics() {
         <table class="w-full table-mini">
           <thead><tr><th>#</th><th>Player</th><th>Club</th><th>Save %</th></tr></thead>
           <tbody>
-            ${topKeepers.map((p, i) => `
-              <tr><td class="font-bold">${i + 1}</td><td class="font-medium">${p.name}</td><td class="text-slate-500">${p.club}</td><td class="font-bold">${p.save}</td></tr>`).join('')}
+            ${topKeepers
+              .map(
+                (p, i) => `
+              <tr>
+                <td class="font-bold">${i + 1}</td>
+                <td class="font-medium">${esc(p.name)}</td>
+                <td class="text-slate-500">${esc(clubName(p.club))}</td>
+                <td class="font-bold">${p.savePct}%</td>
+              </tr>`
+              )
+              .join('')}
           </tbody>
         </table>
       </div>
