@@ -57,9 +57,9 @@ export const standings = {
 };
 
 export const nationalTeams = [
-  { slug: 'senior-men', name: 'Kenya Senior Men', img: 'https://www.facebook.com/photo/?fbid=1657635272497603&set=pcb.1657635545830909', desc: 'The national men\'s handball team representing Kenya in international competitions.' },
-  { slug: 'senior-women', name: 'Kenya Senior Women', img: 'https://www.facebook.com/photo/?fbid=1841459120781883&set=pcb.1841459400781855', desc: 'The national women\'s handball team representing Kenya in international competitions.' },
-  { slug: 'junior', name: 'Junior & Youth', img: 'https://www.facebook.com/photo/?fbid=1657635272497603&set=pcb.1657635545830909', desc: 'Development pathway teams for U18 and U21 players.' },
+  { slug: 'senior-men', name: 'Kenya Senior Men', img: , desc: 'The national men\'s handball team representing Kenya in international competitions.' },
+  { slug: 'senior-women', name: 'Kenya Senior Women', img: https://www.michezoafrika.com/newsimages/COACH-MWATHI-2.JPG', desc: 'The national women\'s handball team representing Kenya in international competitions.' },
+  { slug: 'junior', name: 'Junior & Youth', img:'https://www.michezoafrika.com/newsimages/COACH-MWATHI-2.JPG', desc: 'Development pathway teams for U18 and U21 players.' },
 ];
 
 export const partners = [
@@ -71,7 +71,7 @@ export const partners = [
 ];
 
 export const gallery = [
-  'https://www.facebook.com/photo/?fbid=1197844965143305&set=pcb.1197845351809933',
- ' https://www.facebook.com/photo?fbid=1197845148476620&set=pcb.1197845351809933',
-  'https://www.michezoafrika.com/newsimages/GSU-VS-THIKA-.JPG',
+ 'https://www.michezoafrika.com/newsimages/GSU-VS-THIKA-.JPG',
+   'https://www.michezoafrika.com/newsimages/COACH-MWATHI-2.JPG',
+   'https://www.mod.go.ke/news/ulinzi-sharks-clinch-national-handball-super-cup-2/',
 ];
