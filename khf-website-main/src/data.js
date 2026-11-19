@@ -1,65 +1,107 @@
+
+// KHF data layer
+
+
 export const competitions = [
-  { slug: 'premier-men', name: 'Premier League Men', type: 'league' },
-  { slug: 'premier-women', name: 'Premier League Women', type: 'league' },
-  { slug: 'national-men', name: 'National League Men', type: 'league' },
+  { slug: 'premier-men',   name: 'Premier League Men',   type: 'league', gender: 'men',   tier: 1 },
+  { slug: 'premier-women', name: 'Premier League Women', type: 'league', gender: 'women', tier: 1 },
+  { slug: 'national-men',  name: 'National League Men',  type: 'league', gender: 'men',   tier: 2 },
 ];
 
+// ----------------------------------------------------------------------------
+// CLUBS — 23 entries (13 men, 10 women)
+// ----------------------------------------------------------------------------
 export const clubs = [
-  { id: 1, name: 'Daystar university', short: 'Falcon', location: 'Machakos', category: 'Senior', league: 'Premier League Men', position: 1, pts: 30, gd: 45 },
-  { id: 2, name: 'General Service Unit', short: 'GSU', location: 'Nairobi', category: 'Senior', league: 'Premier League Men', position: 2, pts: 28, gd: 32 },
-  { id: 3, name: 'kisiwa national polytechnic', short: 'Kisiwa', location: 'Bungoma', category: 'Senior', league: 'Premier League Men', position: 3, pts: 24, gd: 18 },
-  { id: 4, name: 'Ulinzi Handball Club', short: 'ULINZI', location: 'Langata', category: 'Senior', league: 'Premier League Men', position: 4, pts: 21, gd: 10 },
-  { id: 5, name: 'Thika Enginners', short: 'Enginners', location: 'Thika', category: 'Senior', league: 'Premier League Men', position: 5, pts: 18, gd: 4 },
-  { id: 6, name: 'Strathmore Tornadoes', short: 'Tornadoes', location: 'Nairobi', category: 'premier league Men', league: 'Premier League men', position: 1, pts: 28, gd: 30 },
-  { id: 7, name: 'Kenyatta University', short: 'KU', location: 'Thika', category: 'men', league: 'Premier League men', position: 2, pts: 26, gd: 22 },
-  { id: 8, name: 'Black Mamba', short: 'Mamba', location: 'Nairobi', category: 'men', league: 'Premier League men', position: 3, pts: 22, gd: 12 },
+  // ---------------------------------- Men ----------------------------------
+  { id: 1,  slug: 'ncpb-men',         name: 'NCPB Men',            short: 'NCPB',      fullName: 'National Cereals & Produce Board',            location: 'Nairobi',  category: 'Senior Men', league: 'premier-men' },
+  { id: 2,  slug: 'equity-men',       name: 'Equity Bank',         short: 'Equity',    fullName: 'Equity Bank Handball Club',                   location: 'Nairobi',  category: 'Senior Men', league: 'premier-men' },
+  { id: 3,  slug: 'ulinzi-men',       name: 'Ulinzi',              short: 'Ulinzi',    fullName: 'Ulinzi Handball Club (Kenya Defence Forces)',  location: 'Langata',  category: 'Senior Men', league: 'premier-men' },
+  { id: 4,  slug: 'strathmore-men',   name: 'Strathmore Tornadoes', short: 'Tornadoes', fullName: 'Strathmore University Tornadoes',             location: 'Nairobi',  category: 'Senior Men', league: 'premier-men' },
+  { id: 5,  slug: 'gsu-men',          name: 'GSU',                 short: 'GSU',       fullName: 'General Service Unit',                        location: 'Nairobi',  category: 'Senior Men', league: 'premier-men' },
+  { id: 6,  slug: 'black-mamba-men',  name: 'Black Mamba',         short: 'Mamba',     fullName: 'Black Mamba HC',                              location: 'Nairobi',  category: 'Senior Men', league: 'premier-men' },
+  { id: 7,  slug: 'kisiwa-men',       name: 'Kisiwa NP Men',       short: 'Kisiwa',    fullName: 'Kisiwa National Polytechnic Men',             location: 'Bungoma',  category: 'Senior Men', league: 'premier-men' },
+  { id: 8,  slug: 'lions-men',        name: 'Lions HC',            short: 'Lions',     fullName: 'Lions Handball Club',                         location: '',         category: 'Senior Men', league: 'premier-men' }, // TODO: location
+  { id: 9,  slug: 'ku-men',           name: 'Kenyatta University', short: 'KU',        fullName: 'Kenyatta University',                         location: 'Nairobi',  category: 'Senior Men', league: 'premier-men' },
+  { id: 10, slug: 'daystar-men',      name: 'Daystar Falcons',     short: 'Daystar',   fullName: 'Daystar University',                          location: 'Machakos', category: 'Senior Men', league: 'premier-men' },
+  { id: 11, slug: 'rangers-men',      name: 'Rangers HC',          short: 'Rangers',   fullName: 'Rangers Handball Club',                       location: '',         category: 'Senior Men', league: 'premier-men' }, // TODO: location
+  { id: 12, slug: 'thika-men',        name: 'Thika Engineers',     short: 'Thika',     fullName: 'Thika Engineers',                             location: 'Thika',    category: 'Senior Men', league: 'premier-men' },
+  { id: 13, slug: 'ulinzi-sharks',    name: 'Ulinzi Sharks',       short: 'Sharks',    fullName: 'Ulinzi Sharks',                               location: '',         category: 'Senior Men', league: 'premier-men' }, // TODO: location — may be the same club as ulinzi-men
+
+  // --------------------------------- Women ---------------------------------
+  { id: 14, slug: 'nairobi-water',    name: 'Nairobi Water Queens', short: 'Nairobi Water', fullName: 'Nairobi Water',                        location: 'Nairobi',  category: 'Senior Women', league: 'premier-women' },
+  { id: 15, slug: 'ncpb-women',       name: 'NCPB Women',           short: 'NCPB W',   fullName: 'National Cereals & Produce Board',           location: 'Nairobi',  category: 'Senior Women', league: 'premier-women' },
+  { id: 16, slug: 'ku-ladies',        name: 'KU Ladies',            short: 'KU Ladies', fullName: 'Kenyatta University (KU Ladies)',           location: 'Nairobi',  category: 'Senior Women', league: 'premier-women' },
+  { id: 17, slug: 'daystar-women',    name: 'Daystar Falcons Women', short: 'Daystar W', fullName: 'Daystar University',                        location: 'Machakos', category: 'Senior Women', league: 'premier-women' },
+  { id: 18, slug: 'kisiwa-women',     name: 'Kisiwa NP Women',      short: 'Kisiwa W',  fullName: 'Kisiwa National Polytechnic Women',          location: 'Bungoma',  category: 'Senior Women', league: 'premier-women' },
+  { id: 19, slug: 'nys-women',        name: 'NYS',                  short: 'NYS',       fullName: 'National Youth Service',                     location: '',         category: 'Senior Women', league: 'premier-women' }, // TODO: location
+  { id: 20, slug: 'amazon-women',     name: 'Amazon HC',            short: 'Amazon',    fullName: 'Amazon Handball Club',                       location: '',         category: 'Senior Women', league: 'premier-women' }, // TODO: location
+  { id: 21, slug: 'desert-scorpions', name: 'Desert Scorpions',     short: 'Scorpions', fullName: 'Desert Scorpion Women',                      location: '',         category: 'Senior Women', league: 'premier-women' }, // TODO: location
+  { id: 22, slug: 'jkuat-women',      name: 'JKUAT',                short: 'JKUAT',     fullName: 'Jomo Kenyatta University of Agriculture & Technology', location: 'Juja', category: 'Senior Women', league: 'premier-women' },
+  { id: 23, slug: 'mountain-queens',  name: 'Mountain Queens',      short: 'M. Queens', fullName: 'Mountain Queens',                            location: '',         category: 'Senior Women', league: 'premier-women' }, // TODO: location
 ];
 
+// ----------------------------------------------------------------------------
+// FIXTURES
+// `comp` is a competition slug. `home` / `away` are club slugs ('TBD' = not set).
+// ----------------------------------------------------------------------------
 export const fixtures = [
-  { id: 'KHF-001', comp: 'Premier League Men', round: 'Round 13', home: 'Nyayo National Stadioum', away: 'Daystar', date: '2026-11-16', time: '15:00', venue: 'Nyayo Stadium', status: 'Scheduled' },
-  { id: 'KHF-002', comp: 'Premier League men', round: 'Round 13', home: 'Nyayo National Stadio', away: 'GSU', date: '2026-11-16', time: '13:00', venue: 'Nyayo Stadium', status: 'Scheduled' },
-  { id: 'KHF-003', comp: 'National League Men', round: 'Round 10', home: 'Nyayo National Stadio', away: 'Enginers', date: '2026-11-17', time: '16:00', venue: 'Nyayo Stadium', status: 'Scheduled' },
-  { id: 'KHF-004', comp: 'Premier League Men', round: 'Round 12', home: 'Nyayo National Stadio', away: 'Kisiwa', date: '2026-11-09', time: '15:00', venue: 'Nyayo Stadium', status: 'Completed', homeScore: 28, awayScore: 24 },
-  { id: 'KHF-005', comp: 'Premier League men', round: 'Round 12', home: 'Nyayo National Stadio', away: 'KU', date: '2026-11-09', time: '13:00', venue: 'Nyayo Stadium', status: 'Completed', homeScore: 31, awayScore: 29 },
-  { id: 'KHF-006', comp: 'National League Men', round: 'Round 9', home: 'Nyayo National Stadio', away: 'Strathmore', date: '2026-11-08', time: '16:00', venue: 'Nyayo Stadium', status: 'Completed', homeScore: 22, awayScore: 22 },
+  { id: 'KHF-001', comp: 'premier-men',  round: 'Round 13', home: 'TBD',     away: 'daystar-men', date: '2026-11-16', time: '15:00', venue: 'Nyayo National Stadium', status: 'Scheduled' }, // TODO: confirm home team
+  { id: 'KHF-002', comp: 'premier-men',  round: 'Round 13', home: 'TBD',     away: 'gsu-men',     date: '2026-11-16', time: '13:00', venue: 'Nyayo National Stadium', status: 'Scheduled' }, // TODO: confirm home team
+  { id: 'KHF-003', comp: 'national-men', round: 'Round 10', home: 'TBD',     away: 'thika-men',   date: '2026-11-17', time: '16:00', venue: 'Nyayo National Stadium', status: 'Scheduled' }, // TODO: confirm home team
+  { id: 'KHF-004', comp: 'premier-men',  round: 'Round 12', home: 'TBD',     away: 'kisiwa-men',  date: '2026-11-09', time: '15:00', venue: 'Nyayo National Stadium', status: 'Completed', homeScore: 28, awayScore: 24 }, // TODO: confirm home team
+  { id: 'KHF-005', comp: 'premier-men',  round: 'Round 12', home: 'TBD',     away: 'ku-men',      date: '2026-11-09', time: '13:00', venue: 'Nyayo National Stadium', status: 'Completed', homeScore: 31, awayScore: 29 }, // TODO: confirm home team
+  { id: 'KHF-006', comp: 'national-men', round: 'Round 9',  home: 'TBD',     away: 'strathmore-men', date: '2026-11-08', time: '16:00', venue: 'Nyayo National Stadium', status: 'Completed', homeScore: 22, awayScore: 22 }, // TODO: confirm home team
 ];
 
+// ----------------------------------------------------------------------------
+// NEWS---------------------------------------------------------------
 export const news = [
   { id: 1, title: 'Matchday 12 round-up: Top of the table tightens', category: 'Premier League Men', tag: 'tag-league', date: '2026-11-14', img: 'https://www.facebook.com/photo.php?fbid=1851361929791602&set=pb.100047534391248.-2207520000&type=3', excerpt: 'Four teams remain within two points at the summit after a dramatic weekend of handball.' },
-  { id: 2, title: "Women's league reaches record participation", category: 'Premier League Women', tag: 'tag-women', date: '2026-11-13', img: 'https://www.facebook.com/photo.php?fbid=1851352589792536&set=pb.100047534391248.-2207520000&type=3', excerpt: 'New clubs join the fast-growing women\'s competition across the country.' },
+  { id: 2, title: "Women's league reaches record participation", category: 'Premier League Women', tag: 'tag-women', date: '2026-11-13', img: 'https://www.facebook.com/photo.php?fbid=1851352589792536&set=pb.100047534391248.-2207520000&type=3', excerpt: "New clubs join the fast-growing women's competition across the country." },
   { id: 3, title: 'Kenya names provisional squad for regional qualifiers', category: 'National Teams', tag: 'tag-national', date: '2026-11-12', img: 'https://www.facebook.com/photo.php?fbid=1841459074115221&set=pb.100047534391248.-2207520000&type=3', excerpt: 'Twenty-four players called up for the upcoming international window.' },
   { id: 4, title: 'School handball programme expands to 12 counties', category: 'Development', tag: 'tag-dev', date: '2026-11-11', img: '', excerpt: 'KHF and partners bring handball to thousands of new students.' },
 ];
 
+// ----------------------------------------------------------------------------
+// PLAYERS
+// `club` is a club slug.
+// ----------------------------------------------------------------------------
 export const players = [
-  { id: 1, name: 'Brian ', position: 'Left Back', club: 'Daystar', goals: 87, stat: 'Top Scorer', img: 'https://www.facebook.com/photo/?fbid=1843882660539529&set=pcb.1843886047205857' },
-  { id: 2, name: 'collins Barasa', position: 'Goalkeeper', club: 'Daystar', save: '42%', stat: 'Best GK', img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80' },
+  { id: 1, name: 'Brian',        position: 'Left Back',  club: 'daystar-men', goals: 87,   stat: 'Top Scorer', img: 'https://www.facebook.com/photo/?fbid=1843882660539529&set=pcb.1843886047205857' },
+  { id: 2, name: 'Collins Barasa', position: 'Goalkeeper', club: 'daystar-men', savePct: 42, stat: 'Best GK',   img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80' },
 ];
 
+// ----------------------------------------------------------------------------
+// STANDINGS — keyed by competition slug
+// `club` is the club slug; `team` is the label shown in the table.
+// ----------------------------------------------------------------------------
 export const standings = {
   'premier-men': [
-    { pos: 1, team: 'Daystar', p: 12, w: 10, d: 0, l: 2, gf: 320, ga: 275, gd: 45, pts: 30 },
-    { pos: 2, team: 'GSU', p: 12, w: 9, d: 1, l: 2, gf: 305, ga: 273, gd: 32, pts: 28 },
-    { pos: 3, team: 'Equity', p: 12, w: 8, d: 0, l: 4, gf: 298, ga: 280, gd: 18, pts: 24 },
-    { pos: 4, team: 'ku', p: 12, w: 7, d: 0, l: 5, gf: 290, ga: 280, gd: 10, pts: 21 },
-    { pos: 5, team: 'Mamba', p: 12, w: 6, d: 0, l: 6, gf: 275, ga: 271, gd: 4, pts: 18 },
+    { pos: 1, club: 'daystar-men',      team: 'Daystar',  p: 12, w: 10, d: 0, l: 2, gf: 320, ga: 275, gd: 45, pts: 30 },
+    { pos: 2, club: 'gsu-men',          team: 'GSU',      p: 12, w: 9,  d: 1, l: 2, gf: 305, ga: 273, gd: 32, pts: 28 },
+    { pos: 3, club: 'equity-men',       team: 'Equity',   p: 12, w: 8,  d: 0, l: 4, gf: 298, ga: 280, gd: 18, pts: 24 },
+    { pos: 4, club: 'ku-men',           team: 'KU',       p: 12, w: 7,  d: 0, l: 5, gf: 290, ga: 280, gd: 10, pts: 21 },
+    { pos: 5, club: 'black-mamba-men',  team: 'Mamba',    p: 12, w: 6,  d: 0, l: 6, gf: 275, ga: 271, gd: 4,  pts: 18 },
   ],
   'premier-women': [
-    { pos: 1, team: 'Ku', p: 12, w: 9, d: 1, l: 2, gf: 310, ga: 280, gd: 30, pts: 28 },
-    { pos: 2, team: ' Nairobi Water', p: 12, w: 8, d: 2, l: 2, gf: 302, ga: 280, gd: 22, pts: 26 },
-    { pos: 3, team: 'Daystar', p: 12, w: 7, d: 1, l: 4, gf: 288, ga: 276, gd: 12, pts: 22 },
+    { pos: 1, club: 'ku-ladies',     team: 'KU Ladies',     p: 12, w: 9, d: 1, l: 2, gf: 310, ga: 280, gd: 30, pts: 28 },
+    { pos: 2, club: 'nairobi-water', team: 'Nairobi Water', p: 12, w: 8, d: 2, l: 2, gf: 302, ga: 280, gd: 22, pts: 26 },
+    { pos: 3, club: 'daystar-women', team: 'Daystar W',     p: 12, w: 7, d: 1, l: 4, gf: 288, ga: 276, gd: 12, pts: 22 },
   ],
   'national-men': [
-    { pos: 1, team: 'Kenya', p: 10, w: 8, d: 0, l: 2, gf: 250, ga: 220, gd: 30, pts: 24 },
-    { pos: 2, team: 'Rwanda', p: 10, w: 7, d: 1, l: 2, gf: 240, ga: 215, gd: 25, pts: 22 },
-    { pos: 3, team: 'Tunisia', p: 10, w: 5, d: 2, l: 3, gf: 225, ga: 210, gd: 15, pts: 17 },
+    { pos: 1, club: '', team: 'Kenya',   p: 10, w: 8, d: 0, l: 2, gf: 250, ga: 220, gd: 30, pts: 24 },
+    { pos: 2, club: '', team: 'Rwanda',  p: 10, w: 7, d: 1, l: 2, gf: 240, ga: 215, gd: 25, pts: 22 },
+    { pos: 3, club: '', team: 'Tunisia', p: 10, w: 5, d: 2, l: 3, gf: 225, ga: 210, gd: 15, pts: 17 },
   ],
 };
 
+// ----------------------------------------------------------------------------
+// NATIONAL TEAMS
+// ----------------------------------------------------------------------------
 export const nationalTeams = [
-  { slug: 'senior-men', name: 'Kenya Senior Men', img: , desc: 'The national men\'s handball team representing Kenya in international competitions.' },
-  { slug: 'senior-women', name: 'Kenya Senior Women', img: https://www.michezoafrika.com/newsimages/COACH-MWATHI-2.JPG', desc: 'The national women\'s handball team representing Kenya in international competitions.' },
-  { slug: 'junior', name: 'Junior & Youth', img:'https://www.michezoafrika.com/newsimages/COACH-MWATHI-2.JPG', desc: 'Development pathway teams for U18 and U21 players.' },
+  { slug: 'senior-men',   name: 'Kenya Senior Men',   img: '', desc: "The national men's handball team representing Kenya in international competitions." }, // TODO: add image
+  { slug: 'senior-women', name: 'Kenya Senior Women', img: 'https://www.michezoafrika.com/newsimages/COACH-MWATHI-2.JPG', desc: "The national women's handball team representing Kenya in international competitions." },
+  { slug: 'junior',       name: 'Junior & Youth',     img: 'https://www.michezoafrika.com/newsimages/COACH-MWATHI-2.JPG', desc: 'Development pathway teams for U18 and U21 players.' },
 ];
 
 export const partners = [
@@ -70,8 +112,20 @@ export const partners = [
   { name: 'Sponsor E', tier: 'Equipment Partner' },
 ];
 
+// NOTE: the third gallery entry is a news article page, not an image file.
 export const gallery = [
- 'https://www.michezoafrika.com/newsimages/GSU-VS-THIKA-.JPG',
-   'https://www.michezoafrika.com/newsimages/COACH-MWATHI-2.JPG',
-   'https://www.mod.go.ke/news/ulinzi-sharks-clinch-national-handball-super-cup-2/',
+  'https://www.michezoafrika.com/newsimages/GSU-VS-THIKA-.JPG',
+  'https://www.michezoafrika.com/newsimages/COACH-MWATHI-2.JPG',
 ];
+
+// ============================================================================
+// HELPERS — use these in components instead of comparing names
+// ============================================================================
+export const clubBySlug = Object.fromEntries(clubs.map((c) => [c.slug, c]));
+export const competitionBySlug = Object.fromEntries(competitions.map((c) => [c.slug, c]));
+
+export const getClub = (slug) => clubBySlug[slug] ?? null;
+export const getCompetition = (slug) => competitionBySlug[slug] ?? null;
+export const getClubsByLeague = (slug) => clubs.filter((c) => c.league === slug);
+export const getStandings = (slug) => standings[slug] ?? [];
+export const getFixturesByComp = (slug) => fixtures.filter((f) => f.comp === slug);
