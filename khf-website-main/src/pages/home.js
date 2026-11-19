@@ -112,9 +112,9 @@ export default function home() {
   <!-- HERO -->
   <section class="relative min-h-[85vh] flex items-center overflow-hidden">
     <div class="absolute inset-0">
-      <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-100 transition-opacity duration-1000" style="background-image:url('https://images.unsplash.com/photo-1547347298-4074fc3086f0?w=1600&q=80')"></div>
-      <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image:url('https://images.unsplash.com/photo-1552667466-07770ae110d0?w=1600&q=80')"></div>
-      <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image:url('https://images.unsplash.com/photo-1517649763962-0c623066013b?w=1600&q=80')"></div>
+      <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-100 transition-opacity duration-1000" style="background-image:url('https://assets.citizen.digital/42380/HANDBALL.jpg?x-image-process=image/resize,m_lfit,w_960/format,webp/quality,q_80')"></div>
+      <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image:url('https://www.google.com/imgres?q=kenya%20handball%20federation&imgurl=https%3A%2F%2Fcdn3.mozzartsport.co.ke%2Fupload%2F825x464%2FNews%2FImage%2F2023_06%2F1687339475158_1684587803972_20220731110530_AO7I0893.jpg&imgrefurl=https%3A%2F%2Fwww.mozzartsport.co.ke%2Fother-sports%2Fnews%2Fkenya-handball-federation-to-organize-national-training-for-referees%2F31499&docid=LSt08O4BVwbh3M&tbnid=0MFCPMUfyJOecM&vet=12ahUKEwi0q8Dlg5SYAxWa_rsIHfAwB44QnPAOegQIexAA..i&w=825&h=464&hcb=2&itg=1&ved=2ahUKEwi0q8Dlg5SYAxWa_rsIHfAwB44QnPAOegQIexAA')"></div>
+      <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image:url('https://www.sjak.co.ke/wp-content/uploads/2024/12/WhatsApp-Image-2024-12-17-at-09.31.07_15ab0eb3.jpg')"></div>
     </div>
     <div class="absolute inset-0 bg-gradient-to-r from-khf-black/95 via-khf-black/65 to-khf-black/20"></div>
     <div class="relative container-x text-white py-16 max-w-3xl">
