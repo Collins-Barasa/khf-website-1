@@ -112,7 +112,7 @@ export default function home() {
   <!-- HERO -->
   <section class="relative min-h-[85vh] flex items-center overflow-hidden">
     <div class="absolute inset-0">
-      <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-100 transition-opacity duration-1000" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6WZdEMpj4YnllJbLLq0f0ynlUH-dgEzARWR-U97asyg&s=10')"></div>
+      <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-100 transition-opacity duration-1000" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHPI7M-Vj5VMOWjUai_jS5RliRvXjeSCKlh-YJs9b1wQ&s')"></div>
       <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRomnlZTP1KXdr8-KkHbex0GonmjJvSmuD3hUbOzt9pmQ&s=10')"></div>
       <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkiJSUGLmom3b0rPKYXOzXyU5raBcG4TWmdp-1l9e2HQ&s=10')"></div>
     </div>
