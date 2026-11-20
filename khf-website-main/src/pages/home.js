@@ -113,8 +113,8 @@ export default function home() {
   <section class="relative min-h-[85vh] flex items-center overflow-hidden">
     <div class="absolute inset-0">
       <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-100 transition-opacity duration-1000" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHPI7M-Vj5VMOWjUai_jS5RliRvXjeSCKlh-YJs9b1wQ&s')"></div>
-      <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRomnlZTP1KXdr8-KkHbex0GonmjJvSmuD3hUbOzt9pmQ&s=10')"></div>
-      <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkiJSUGLmom3b0rPKYXOzXyU5raBcG4TWmdp-1l9e2HQ&s=10')"></div>
+      <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIlusEOD0_FCsAVprGUf2bv3NhNI2TdzVxA3ln92hlUQ&s=10')"></div>
+      <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoAPerQW1vB55MgqgtT323e6P_7GOs_o_YH3MEMz_M6g&s=10')"></div>
     </div>
     <div class="absolute inset-0 bg-gradient-to-r from-khf-black/95 via-khf-black/65 to-khf-black/20"></div>
     <div class="relative container-x text-white py-16 max-w-3xl">
