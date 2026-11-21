@@ -8,4 +8,22 @@ export const IS_PROD = import.meta.env.PROD;
 export function absoluteUrl(path = '') {
   const clean = path.replace(/^#?\/?/, '');
   return `${SITE_URL}/#/${clean}`;
-}
+}module.exports = {
+  content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        khf: {
+          black: "#0f172a",
+          red: "#dc2626",
+          green: "#15803d",
+        },
+      },
+      fontFamily: {
+        head: ["Oswald", "Bebas Neue", "sans-serif"],
+        sans: ["Plus Jakarta Sans", "Inter", "sans-serif"],
+      },
+    },
+  },
+  plugins: [],
+};
