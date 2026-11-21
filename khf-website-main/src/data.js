@@ -75,18 +75,19 @@ export const players = [
 // ----------------------------------------------------------------------------
 export const standings = {
   'premier-men': [
-    { pos: 1,  club: 'ulinzi-shooters-men', team: 'ULINZI SHOOTERS', p: 2, w: 2, d: 0, l: 0, gf: 79, ga: 38,  gd: '41', pts: 4 },
-    { pos: 2,  club: 'equity-men',          team: 'EQUITY',          p: 2, w: 2, d: 0, l: 0, gf: 62, ga: 33,  gd: '29', pts: 4 },
-    { pos: 3,  club: 'black-mamba-men',     team: 'BLACK MAMBA',     p: 2, w: 2, d: 0, l: 0, gf: 50, ga: 33,  gd: '17', pts: 4 },
-    { pos: 4,  club: 'gsu-men',             team: 'GSU',             p: 2, w: 2, d: 0, l: 0, gf: 65, ga: 52,  gd: '13', pts: 4 },
+    
+    { pos: 1,  club: 'gsu-men',             team: 'GSU', p: 3, w: 3, d: 0, l: 0, gf: 80, ga: 28,  gd: '28', pts: 6 },
+     { pos: 2,  club: 'ulinzi-shooters',     team: 'ULINZI',          p: 2, w: 2, d: 0, l: 0, gf: 79, ga: 38,  gd: '41', pts: 4 },
+    { pos: 3,  club: 'equity-men',          team: 'EQUITY',          p: 2, w: 2, d: 0, l: 0, gf: 62, ga: 33,  gd: '29', pts: 4 },
+    { pos: 4,  club: 'black-mamba-men',     team: 'BLACK MAMBA',     p: 2, w: 2, d: 0, l: 0, gf: 50, ga: 33,  gd: '17', pts: 4 },
     { pos: 5,  club: 'ncpb-men',            team: 'NCPB',            p: 1, w: 1, d: 0, l: 0, gf: 32, ga: 21,  gd: '11', pts: 2 },
-    { pos: 7,  club: 'strathmore-men',      team: 'STRATHMORE',      p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,   gd: '0',   pts: 0 },
-    { pos: 8,  club: 'thika-combat-men',    team: 'THIKA COMBAT',    p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,   gd: '0',   pts: 0 },
-    { pos: 9,  club: 'daystar-men',         team: 'DAYSTAR',         p: 1, w: 0, d: 0, l: 1, gf: 28, ga: 29,  gd: '-1',  pts: 0 },
-    { pos: 10, club: 'ku-men',              team: 'KU',              p: 1, w: 0, d: 0, l: 1, gf: 19, ga: 27,  gd: '-8',  pts: 0 },
-    { pos: 11, club: 'lions-men',           team: 'LIONS',           p: 2, w: 0, d: 0, l: 2, gf: 37, ga: 48,  gd: '-11', pts: 0 },
-    { pos: 12, club: 'kisiwa-n-p-men',      team: 'KISIWA N P',      p: 2, w: 0, d: 0, l: 2, gf: 37, ga: 58,  gd: '-21', pts: 0 },
-    { pos: 13, club: 'rangers-men',         team: 'RANGERS',         p: 4, w: 0, d: 0, l: 4, gf: 78, ga: 150, gd: '-72', pts: 0 },
+    { pos: 6,  club: 'strathmore-men',      team: 'STRATHMORE',      p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,   gd: '0',   pts: 0 },
+    { pos: 7,  club: 'thika-combat-men',    team: 'THIKA COMBAT',    p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,   gd: '0',   pts: 0 },
+    { pos: 8,  club: 'daystar-men',         team: 'DAYSTAR',         p: 1, w: 0, d: 0, l: 1, gf: 28, ga: 29,  gd: '-1',  pts: 0 },
+    { pos: 9, club: 'ku-men',              team: 'KU',              p: 2, w: 0, d: 0, l: 1, gf: 41, ga: 7,  gd: '-6',  pts: 0 },
+    { pos: 10, club: 'lions-men',           team: 'LIONS',           p: 2, w: 0, d: 0, l: 2, gf: 37, ga: 11,  gd: '-11', pts: 0 },
+    { pos: 11, club: 'kisiwa-n-p-men',      team: 'KISIWA N P',      p: 2, w: 0, d: 0, l: 2, gf: 37, ga: 58,  gd: '-21', pts: 0 },
+    { pos: 12, club: 'rangers-men',         team: 'RANGERS',         p: 4, w: 0, d: 0, l: 4, gf: 37, ga: 41, gd: '-72', pts: 0 },
   ],
   'premier-women': [
     { pos: 1,  club: 'KISIWA',           team: 'DAYSTAR',          p: 2, w: 2, d: 0, l: 0, gf: 59, ga: 39, gd: 39, pts: 4 },
