@@ -75,7 +75,7 @@ export const players = [
 // ----------------------------------------------------------------------------
 export const standings = {
   'premier-men': [
-    { pos: 1,  club: 'ncpb-men',          team: 'NCPB',       p: 8,  w: 8, d: 0, l: 0, gf: 386, ga: 161, gd: 225,  pts: 16 },
+    { pos: 1,  club: 'Daystar',          team: 'NCPB',       p: 8,  w: 8, d: 0, l: 0, gf: 386, ga: 161, gd: 225,  pts: 16 },
 { pos: 2,  club: 'equity-men',        team: 'Equity',     p: 6,  w: 6, d: 0, l: 0, gf: 228, ga: 104, gd: 124,  pts: 12 },
 { pos: 3,  club: 'ulinzi-men',        team: 'Ulinzi',     p: 6,  w: 6, d: 0, l: 0, gf: 227, ga: 107, gd: 120,  pts: 12 },
 { pos: 4,  club: 'black-mamba-men',   team: 'Black Mamba',p: 6,  w: 4, d: 0, l: 2, gf: 195, ga: 147, gd: 48,   pts: 8  },
