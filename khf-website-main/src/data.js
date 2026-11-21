@@ -1,4 +1,3 @@
-
 // KHF data layer
 
 
@@ -25,17 +24,17 @@ export const clubs = [
   { id: 10, slug: 'Daystar-men',      name: 'Daystar Falcons',     short: 'Daystar',   fullName: 'Daystar University',                          location: 'Machakos', category: 'Senior Men', league: 'premier-men' },
   { id: 11, slug: 'Rangers-men',      name: 'Rangers HC',          short: 'Rangers',   fullName: 'Rangers Handball Club',                       location: '',         category: 'Senior Men', league: 'premier-men' }, // TODO: location
   { id: 12, slug: 'Thika-men',        name: 'Thika Engineers',     short: 'Thika',     fullName: 'Thika Engineers',                             location: 'Thika',    category: 'Senior Men', league: 'premier-men' },
- 
-  { id: 14, slug: 'nairobi-water',    name: 'Nairobi Water Queens', short: 'Nairobi Water', fullName: 'Nairobi Water',                        location: 'Nairobi',  category: 'Senior Women', league: 'premier-women' },
-  { id: 15, slug: 'ncpb-women',       name: 'NCPB Women',           short: 'NCPB W',   fullName: 'National Cereals & Produce Board',           location: 'Nairobi',  category: 'Senior Women', league: 'premier-women' },
-  { id: 16, slug: 'ku-ladies',        name: 'KU Ladies',            short: 'KU Ladies', fullName: 'Kenyatta University (KU Ladies)',           location: 'Nairobi',  category: 'Senior Women', league: 'premier-women' },
-  { id: 17, slug: 'daystar-women',    name: 'Daystar Falcons Women', short: 'Daystar W', fullName: 'Daystar University',                        location: 'Machakos', category: 'Senior Women', league: 'premier-women' },
-  { id: 18, slug: 'kisiwa-women',     name: 'Kisiwa NP Women',      short: 'Kisiwa W',  fullName: 'Kisiwa National Polytechnic Women',          location: 'Bungoma',  category: 'Senior Women', league: 'premier-women' },
-  { id: 19, slug: 'nys-women',        name: 'NYS',                  short: 'NYS',       fullName: 'National Youth Service',                     location: 'Nairobi',         category: 'Senior Women', league: 'premier-women' }, // TODO: location
-  { id: 20, slug: 'amazon-women',     name: 'Amazon HC',            short: 'Amazon',    fullName: 'Amazon Handball Club',                       location: 'Nairobi',         category: 'Senior Women', league: 'premier-women' }, // TODO: location
-  { id: 21, slug: 'desert-scorpions', name: 'Desert Scorpions',     short: 'Scorpions', fullName: 'Desert Scorpion Women',                      location: 'Thika',         category: 'Senior Women', league: 'premier-women' }, // TODO: location
-  { id: 22, slug: 'jkuat-women',      name: 'JKUAT',                short: 'JKUAT',     fullName: 'Jomo Kenyatta University of Agriculture & Technology', location: 'Juja', category: 'Senior Women', league: 'premier-women' },
-  { id: 23, slug: 'mountain-queens',  name: 'Mountain Queens',      short: 'M. Queens', fullName: 'Mountain Queens',                            location: 'Machakos',         category: 'Senior Women', league: 'premier-women' }, // TODO: location
+
+  { id: 14, slug: 'nairobi-water',    name: 'Nairobi Water Queens',  short: 'Nairobi Water', fullName: 'Nairobi Water',                                     location: 'Nairobi',  category: 'Senior Women', league: 'premier-women' },
+  { id: 15, slug: 'ncpb-women',       name: 'NCPB Women',            short: 'NCPB W',        fullName: 'National Cereals & Produce Board',                  location: 'Nairobi',  category: 'Senior Women', league: 'premier-women' },
+  { id: 16, slug: 'ku-ladies',        name: 'KU Ladies',             short: 'KU Ladies',     fullName: 'Kenyatta University (KU Ladies)',                  location: 'Nairobi',  category: 'Senior Women', league: 'premier-women' },
+  { id: 17, slug: 'daystar-women',    name: 'Daystar Falcons Women', short: 'Daystar W',     fullName: 'Daystar University',                               location: 'Machakos', category: 'Senior Women', league: 'premier-women' },
+  { id: 18, slug: 'kisiwa-women',     name: 'Kisiwa NP Women',       short: 'Kisiwa W',      fullName: 'Kisiwa National Polytechnic Women',                 location: 'Bungoma',  category: 'Senior Women', league: 'premier-women' },
+  { id: 19, slug: 'nys-women',        name: 'NYS',                   short: 'NYS',           fullName: 'National Youth Service',                            location: 'Nairobi',  category: 'Senior Women', league: 'premier-women' }, // TODO: location
+  { id: 20, slug: 'amazon-women',     name: 'Amazon HC',             short: 'Amazon',        fullName: 'Amazon Handball Club',                              location: 'Nairobi',  category: 'Senior Women', league: 'premier-women' }, // TODO: location
+  { id: 21, slug: 'desert-scorpions', name: 'Desert Scorpions',      short: 'Scorpions',     fullName: 'Desert Scorpion Women',                             location: 'Thika',    category: 'Senior Women', league: 'premier-women' }, // TODO: location
+  { id: 22, slug: 'jkuat-women',      name: 'JKUAT',                 short: 'JKUAT',         fullName: 'Jomo Kenyatta University of Agriculture & Technology', location: 'Juja',    category: 'Senior Women', league: 'premier-women' },
+  { id: 23, slug: 'mountain-queens',  name: 'Mountain Queens',       short: 'M. Queens',     fullName: 'Mountain Queens',                                   location: 'Machakos', category: 'Senior Women', league: 'premier-women' }, // TODO: location
 ];
 
 // ----------------------------------------------------------------------------
@@ -43,14 +42,13 @@ export const clubs = [
 // `comp` is a competition slug. `home` / `away` are club slugs ('TBD' = not set).
 // ----------------------------------------------------------------------------
 export const fixtures = [
-  {
-    id: 'KHF-001',comp: 'premier-women',round: 'First leg',home: 'DAYSTAR W',away: 'JKUAT W',date: '2026-11-28',time: '13:30',venue: 'KALOLENI',status: 'Scheduled',homeScore: 32,awayScore: 23}, // TODO: confirm home team
-  { id: 'KHF-001', comp: 'premier-men',  round: 'First leg', home: 'DAYSTAR',     away: 'ULINZI SHOOTERS', date: '2026-11-28', time: '15:00', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
-  { id: 'KHF-002', comp: 'premier-men',  round: 'First leg', home: 'GSU',     away: 'STRATHMORE',     date: '2026-11-28', time: '16:30', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
-  { id: 'KHF-003', comp: 'premier-women', round: 'First leg', home: 'JKUAT',     away: 'NYS',   date: '2026-11-29', time: '09:00', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
-  { id: 'KHF-004', comp: 'premier-women',  round: 'First leg', home: 'DAYSTAR',     away: 'KU',  date: '2026-11-29', time: '13:30', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
-  { id: 'KHF-005', comp: 'premier-men',  round: 'First leg', home: 'KU',     away: 'DAYSTAR',      date: '2026-11-29', time: '15:00', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
-  { id: 'KHF-006', comp: 'premier-men', round: 'First leg',  home: 'EQUITY',     away: 'STRATHMORE', date: '2026-11-29', time: '16:30', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
+  { id: 'KHF-001', comp: 'premier-women', round: 'First leg', home: 'DAYSTAR W', away: 'JKUAT W',         date: '2026-11-28', time: '13:30', venue: 'KALOLENI', status: 'Scheduled', homeScore: 32, awayScore: 23 }, // TODO: confirm home team
+  { id: 'KHF-002', comp: 'premier-men',   round: 'First leg', home: 'DAYSTAR',   away: 'ULINZI SHOOTERS', date: '2026-11-28', time: '15:00', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
+  { id: 'KHF-003', comp: 'premier-men',   round: 'First leg', home: 'GSU',       away: 'STRATHMORE',      date: '2026-11-28', time: '16:30', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
+  { id: 'KHF-004', comp: 'premier-women', round: 'First leg', home: 'JKUAT',     away: 'NYS',             date: '2026-11-29', time: '09:00', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
+  { id: 'KHF-005', comp: 'premier-women', round: 'First leg', home: 'DAYSTAR',   away: 'KU',              date: '2026-11-29', time: '13:30', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
+  { id: 'KHF-006', comp: 'premier-men',   round: 'First leg', home: 'KU',        away: 'DAYSTAR',         date: '2026-11-29', time: '15:00', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
+  { id: 'KHF-007', comp: 'premier-men',   round: 'First leg', home: 'EQUITY',    away: 'STRATHMORE',      date: '2026-11-29', time: '16:30', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
 ];
 
 // ----------------------------------------------------------------------------
@@ -67,7 +65,7 @@ export const news = [
 // `club` is a club slug.
 // ----------------------------------------------------------------------------
 export const players = [
-  { id: 1, name: 'Brian',        position: 'Left Back',  club: 'daystar-men', goals: 87,   stat: 'Top Scorer', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpLjSNWWwvWpeZu3I_JH7fGsgPWIywOV4oRoYn15UHggVLTeeP9rCvZSc&s=10' },
+  { id: 1, name: 'Brian',          position: 'Left Back',  club: 'daystar-men', goals: 87,      stat: 'Top Scorer', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpLjSNWWwvWpeZu3I_JH7fGsgPWIywOV4oRoYn15UHggVLTeeP9rCvZSc&s=10' },
   { id: 2, name: 'Collins Barasa', position: 'Goalkeeper', club: 'daystar-men', savePct: 42, stat: 'Best GK',   img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80' },
 ];
 
@@ -77,32 +75,31 @@ export const players = [
 // ----------------------------------------------------------------------------
 export const standings = {
   'premier-men': [
-{ pos: 1,  club: [
-    { pos: 1,  club: 'ulinzi-shooters-men', team: 'ULINZI SHOOTERS', p: 2, w: 2, d: 0, l: 0, gf: 79, ga: 38, gd: '+41', pts: 4 },
-    { pos: 2,  club: 'equity-men',          team: 'EQUITY',          p: 2, w: 2, d: 0, l: 0, gf: 62, ga: 33, gd: '+29', pts: 4 },
-    { pos: 3,  club: 'black-mamba-men',     team: 'BLACK MAMBA',     p: 2, w: 2, d: 0, l: 0, gf: 50, ga: 33, gd: '+17', pts: 4 },
-    { pos: 4,  club: 'gsu-men',             team: 'GSU',             p: 2, w: 2, d: 0, l: 0, gf: 65, ga: 52, gd: '+13', pts: 4 },
-    { pos: 5,  club: 'ncpb-men',            team: 'NCPB',            p: 1, w: 1, d: 0, l: 0, gf: 32, ga: 21, gd: '+11', pts: 2 },
-    { pos: 7,  club: 'strathmore-men',      team: 'STRATHMORE',      p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,  gd: '0',   pts: 0 },
-    { pos: 8,  club: 'thika-combat-men',    team: 'THIKA COMBAT',    p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,  gd: '0',   pts: 0 },
-    { pos: 9,  club: 'daystar-men',         team: 'DAYSTAR',         p: 1, w: 0, d: 0, l: 1, gf: 28, ga: 29, gd: '-1',  pts: 0 },
-    { pos: 10, club: 'ku-men',              team: 'KU',              p: 1, w: 0, d: 0, l: 1, gf: 19, ga: 27, gd: '-8',  pts: 0 },
-    { pos: 11, club: 'lions-men',           team: 'LIONS',           p: 2, w: 0, d: 0, l: 2, gf: 37, ga: 48, gd: '-11', pts: 0 },
-    { pos: 12, club: 'kisiwa-n-p-men',      team: 'KISIWA N P',      p: 2, w: 0, d: 0, l: 2, gf: 37, ga: 58, gd: '-21', pts: 0 },
+    { pos: 1,  club: 'ulinzi-shooters-men', team: 'ULINZI SHOOTERS', p: 2, w: 2, d: 0, l: 0, gf: 79, ga: 38,  gd: '+41', pts: 4 },
+    { pos: 2,  club: 'equity-men',          team: 'EQUITY',          p: 2, w: 2, d: 0, l: 0, gf: 62, ga: 33,  gd: '+29', pts: 4 },
+    { pos: 3,  club: 'black-mamba-men',     team: 'BLACK MAMBA',     p: 2, w: 2, d: 0, l: 0, gf: 50, ga: 33,  gd: '+17', pts: 4 },
+    { pos: 4,  club: 'gsu-men',             team: 'GSU',             p: 2, w: 2, d: 0, l: 0, gf: 65, ga: 52,  gd: '+13', pts: 4 },
+    { pos: 5,  club: 'ncpb-men',            team: 'NCPB',            p: 1, w: 1, d: 0, l: 0, gf: 32, ga: 21,  gd: '+11', pts: 2 },
+    { pos: 7,  club: 'strathmore-men',      team: 'STRATHMORE',      p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,   gd: '0',   pts: 0 },
+    { pos: 8,  club: 'thika-combat-men',    team: 'THIKA COMBAT',    p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,   gd: '0',   pts: 0 },
+    { pos: 9,  club: 'daystar-men',         team: 'DAYSTAR',         p: 1, w: 0, d: 0, l: 1, gf: 28, ga: 29,  gd: '-1',  pts: 0 },
+    { pos: 10, club: 'ku-men',              team: 'KU',              p: 1, w: 0, d: 0, l: 1, gf: 19, ga: 27,  gd: '-8',  pts: 0 },
+    { pos: 11, club: 'lions-men',           team: 'LIONS',           p: 2, w: 0, d: 0, l: 2, gf: 37, ga: 48,  gd: '-11', pts: 0 },
+    { pos: 12, club: 'kisiwa-n-p-men',      team: 'KISIWA N P',      p: 2, w: 0, d: 0, l: 2, gf: 37, ga: 58,  gd: '-21', pts: 0 },
     { pos: 13, club: 'rangers-men',         team: 'RANGERS',         p: 4, w: 0, d: 0, l: 4, gf: 78, ga: 150, gd: '-72', pts: 0 },
   ],
   'premier-women': [
-{ pos: 1,  club: 'KISIWA',   team: 'DAYSTAR',   p: 2, w: 2, d: 0, l: 0, gf: 59, ga: 39, gd: +39,  pts: 4 },
-{ pos: 2,  club: 'NAIROBI WATER',            team: 'NAIROBI WATER',            p: 1, w: 1, d: 0, l: 0, gf: 45, ga: 17, gd: +28,  pts: 2 },
-{ pos: 3,  club: 'DAYSTAR',   team: 'DAYSTAR',   p: 1, w: 1,  d: 0, l: 0, gf: 37, ga: 13, gd: +24,  pts: 2 },
-{ pos: 4,  club: 'NYS',             team: 'NYS',             p: 1, w: 0,  d: 0, l: 1, gf: 20, ga: 0, gd: -20, pts: 0 },
-{ pos: 5,  club: 'JKUAT',              team: 'JKUAT',              p: 1,  w: 0,  d: 0, l: 1, gf: 17, ga: 0, gd: -28,   pts: 0 },
-{ pos: 6,  club: 'MOUNTAIN QUENS', team: 'MOUNTAIN QUEENS', p: 0, w: 0,  d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 },
-{ pos: 7,  club: 'NCPB',     team: 'NCPB',     p: 0, w: 0,  d: 0, l: 0, gf: 0, ga: 0, gd: 0,  pts: 0  },
-{ pos: 8,  club: 'KU',          team: 'KU',          p: 0,  w: 0,  d: 0, l: 0, gf: 0, ga: 0, gd: 0,  pts: 0  },
-{ pos: 9,  club: 'DESERT SCOORPIONS',         team: 'DESERT SCORPIONS',         p: 0, w: 0,  d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 },
-{ pos: 10, club: 'ULINZI HARKS',           team: 'ULINZI SHARKS',       p: 0, w: 0,  d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 },
-{ pos: 11, club: 'AMAZON',        team: 'AMAZON',        p: 0, w: 0,  d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 },
+    { pos: 1,  club: 'KISIWA',           team: 'DAYSTAR',          p: 2, w: 2, d: 0, l: 0, gf: 59, ga: 39, gd: +39, pts: 4 },
+    { pos: 2,  club: 'NAIROBI WATER',    team: 'NAIROBI WATER',    p: 1, w: 1, d: 0, l: 0, gf: 45, ga: 17, gd: +28, pts: 2 },
+    { pos: 3,  club: 'DAYSTAR',          team: 'DAYSTAR',          p: 1, w: 1, d: 0, l: 0, gf: 37, ga: 13, gd: +24, pts: 2 },
+    { pos: 4,  club: 'NYS',              team: 'NYS',              p: 1, w: 0, d: 0, l: 1, gf: 20, ga: 0,  gd: -20, pts: 0 },
+    { pos: 5,  club: 'JKUAT',            team: 'JKUAT',            p: 1, w: 0, d: 0, l: 1, gf: 17, ga: 0,  gd: -28, pts: 0 },
+    { pos: 6,  club: 'MOUNTAIN QUENS',   team: 'MOUNTAIN QUEENS',  p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,  gd: 0,   pts: 0 },
+    { pos: 7,  club: 'NCPB',             team: 'NCPB',             p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,  gd: 0,   pts: 0 },
+    { pos: 8,  club: 'KU',               team: 'KU',               p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,  gd: 0,   pts: 0 },
+    { pos: 9,  club: 'DESERT SCOORPIONS',team: 'DESERT SCORPIONS', p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,  gd: 0,   pts: 0 },
+    { pos: 10, club: 'ULINZI HARKS',     team: 'ULINZI SHARKS',    p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,  gd: 0,   pts: 0 },
+    { pos: 11, club: 'AMAZON',           team: 'AMAZON',           p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,  gd: 0,   pts: 0 },
   ],
   'national-men': [
     { pos: 1, club: '', team: 'Kenya',   p: 10, w: 8, d: 0, l: 2, gf: 250, ga: 220, gd: 30, pts: 24 },
