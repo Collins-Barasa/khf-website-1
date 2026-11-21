@@ -83,7 +83,6 @@ export const standings = {
     { pos: 3,  club: 'black-mamba-men',     team: 'BLACK MAMBA',     p: 2, w: 2, d: 0, l: 0, gf: 50, ga: 33, gd: '+17', pts: 4 },
     { pos: 4,  club: 'gsu-men',             team: 'GSU',             p: 2, w: 2, d: 0, l: 0, gf: 65, ga: 52, gd: '+13', pts: 4 },
     { pos: 5,  club: 'ncpb-men',            team: 'NCPB',            p: 1, w: 1, d: 0, l: 0, gf: 32, ga: 21, gd: '+11', pts: 2 },
-    { pos: 6,  club: 'ku-hybrid-men',       team: 'KU HYBRID',       p: 1, w: 1, d: 0, l: 0, gf: 24, ga: 22, gd: '+2',  pts: 2 },
     { pos: 7,  club: 'strathmore-men',      team: 'STRATHMORE',      p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,  gd: '0',   pts: 0 },
     { pos: 8,  club: 'thika-combat-men',    team: 'THIKA COMBAT',    p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,  gd: '0',   pts: 0 },
     { pos: 9,  club: 'daystar-men',         team: 'DAYSTAR',         p: 1, w: 0, d: 0, l: 1, gf: 28, ga: 29, gd: '-1',  pts: 0 },
