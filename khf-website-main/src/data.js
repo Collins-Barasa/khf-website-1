@@ -90,7 +90,7 @@ export const standings = {
     { pos: 12, club: 'rangers-men',         team: 'RANGERS',         p: 4, w: 0, d: 0, l: 4, gf: 37, ga: 41, gd: '-72', pts: 0 },
   ],
   'premier-women': [
-    { pos: 1,  club: 'KISIWA',           team: 'DAYSTAR',          p: 2, w: 2, d: 0, l: 0, gf: 59, ga: 39, gd: 39, pts: 4 },
+    { pos: 1,  club: 'KISIWA',           team: 'KISIWA',          p: 2, w: 2, d: 0, l: 0, gf: 59, ga: 39, gd: 39, pts: 4 },
     { pos: 2,  club: 'NAIROBI WATER',    team: 'NAIROBI WATER',    p: 1, w: 1, d: 0, l: 0, gf: 45, ga: 17, gd: 28, pts: 2 },
     { pos: 3,  club: 'DAYSTAR',          team: 'DAYSTAR',          p: 1, w: 1, d: 0, l: 0, gf: 37, ga: 13, gd: 24, pts: 2 },
     { pos: 4,  club: 'NYS',              team: 'NYS',              p: 1, w: 0, d: 0, l: 1, gf: 20, ga: 0,  gd: -20, pts: 0 },
