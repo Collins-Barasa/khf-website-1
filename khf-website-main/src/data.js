@@ -77,16 +77,20 @@ export const players = [
 // ----------------------------------------------------------------------------
 export const standings = {
   'premier-men': [
-{ pos: 1,  club: 'Daystar',          team: 'NCPB',       p: 8,  w: 8, d: 0, l: 0, gf: 386, ga: 161, gd: 225,  pts: 16 },
-{ pos: 2,  club: 'equity-men',        team: 'Equity',     p: 6,  w: 6, d: 0, l: 0, gf: 228, ga: 104, gd: 124,  pts: 12 },
-{ pos: 3,  club: 'ulinzi-men',        team: 'Ulinzi',     p: 6,  w: 6, d: 0, l: 0, gf: 227, ga: 107, gd: 120,  pts: 12 },
-{ pos: 4,  club: 'black-mamba-men',   team: 'Black Mamba',p: 6,  w: 4, d: 0, l: 2, gf: 195, ga: 147, gd: 48,   pts: 8  },
-{ pos: 5,  club: 'strathmore-men',    team: 'Strathmore', p: 5,  w: 4, d: 0, l: 1, gf: 124, ga: 111, gd: 13,   pts: 8  },
-{ pos: 6,  club: 'hunters-men',       team: 'Hunters',    p: 12, w: 4, d: 0, l: 8, gf: 309, ga: 402, gd: -93,  pts: 8  },
-{ pos: 7,  club: 'gsu-men',           team: 'GSU',        p: 3,  w: 3, d: 0, l: 0, gf: 99,  ga: 65,  gd: 34,   pts: 6  },
-{ pos: 8,  club: 'lions-hc-men',      team: 'Lions HC',   p: 4,  w: 3, d: 0, l: 1, gf: 153, ga: 128, gd: 25,   pts: 6  },
-{ pos: 9,  club: 'thika-men',         team: 'Thika',      p: 6,  w: 3, d: 0, l: 3, gf: 200, ga: 212, gd: -12,  pts: 6  },
-{ pos: 10, club: 'kisiwa-tti-men',    team: 'Kisiwa TTI', p: 7,  w: 3, d: 0, l: 4, gf: 209, ga: 243, gd: -34,  pts: 6  },
+{ pos: 1,  club: [
+    { pos: 1,  club: 'ulinzi-shooters-men', team: 'ULINZI SHOOTERS', p: 2, w: 2, d: 0, l: 0, gf: 79, ga: 38, gd: '+41', pts: 4 },
+    { pos: 2,  club: 'equity-men',          team: 'EQUITY',          p: 2, w: 2, d: 0, l: 0, gf: 62, ga: 33, gd: '+29', pts: 4 },
+    { pos: 3,  club: 'black-mamba-men',     team: 'BLACK MAMBA',     p: 2, w: 2, d: 0, l: 0, gf: 50, ga: 33, gd: '+17', pts: 4 },
+    { pos: 4,  club: 'gsu-men',             team: 'GSU',             p: 2, w: 2, d: 0, l: 0, gf: 65, ga: 52, gd: '+13', pts: 4 },
+    { pos: 5,  club: 'ncpb-men',            team: 'NCPB',            p: 1, w: 1, d: 0, l: 0, gf: 32, ga: 21, gd: '+11', pts: 2 },
+    { pos: 6,  club: 'ku-hybrid-men',       team: 'KU HYBRID',       p: 1, w: 1, d: 0, l: 0, gf: 24, ga: 22, gd: '+2',  pts: 2 },
+    { pos: 7,  club: 'strathmore-men',      team: 'STRATHMORE',      p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,  gd: '0',   pts: 0 },
+    { pos: 8,  club: 'thika-combat-men',    team: 'THIKA COMBAT',    p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,  gd: '0',   pts: 0 },
+    { pos: 9,  club: 'daystar-men',         team: 'DAYSTAR',         p: 1, w: 0, d: 0, l: 1, gf: 28, ga: 29, gd: '-1',  pts: 0 },
+    { pos: 10, club: 'ku-men',              team: 'KU',              p: 1, w: 0, d: 0, l: 1, gf: 19, ga: 27, gd: '-8',  pts: 0 },
+    { pos: 11, club: 'lions-men',           team: 'LIONS',           p: 2, w: 0, d: 0, l: 2, gf: 37, ga: 48, gd: '-11', pts: 0 },
+    { pos: 12, club: 'kisiwa-n-p-men',      team: 'KISIWA N P',      p: 2, w: 0, d: 0, l: 2, gf: 37, ga: 58, gd: '-21', pts: 0 },
+    { pos: 13, club: 'rangers-men',         team: 'RANGERS',         p: 4, w: 0, d: 0, l: 4, gf: 78, ga: 150, gd: '-72', pts: 0 },
   ],
   'premier-women': [
 { pos: 1,  club: 'KISIWA',   team: 'KISIWA',   p: 2, w: 2, d: 0, l: 0, gf: 59, ga: 39, gd: +39,  pts: 4 },
@@ -96,9 +100,9 @@ export const standings = {
 { pos: 5,  club: 'JKUAT',              team: 'JKUAT',              p: 1,  w: 0,  d: 0, l: 1, gf: 17, ga: 0, gd: -28,   pts: 0 },
 { pos: 6,  club: 'MOUNTAIN QUENS', team: 'MOUNTAIN QUEENS', p: 0, w: 0,  d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 },
 { pos: 7,  club: 'NCPB',     team: 'NCPB',     p: 0, w: 0,  d: 0, l: 0, gf: 0, ga: 0, gd: 0,  pts: 0  },
-{ pos: 8,  club: 'KU',          team: 'KU',          p: 0,  w: 0,  d: 0, l: 0, gf: 0, ga: 0, gd: -62,  pts: 0  },
+{ pos: 8,  club: 'KU',          team: 'KU',          p: 0,  w: 0,  d: 0, l: 0, gf: 0, ga: 0, gd: 0,  pts: 0  },
 { pos: 9,  club: 'DESERT SCOORPIONS',         team: 'DESERT SCORPIONS',         p: 0, w: 0,  d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 },
-{ pos: 10, club: 'ULINZI HARKS',           team: 'ULINZI SHARKS',       p: 0, w: 0,  d: 0, l: 0, gf: 233, ga: 0, gd: 0, pts: 0 },
+{ pos: 10, club: 'ULINZI HARKS',           team: 'ULINZI SHARKS',       p: 0, w: 0,  d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 },
 { pos: 11, club: 'AMAZON',        team: 'AMAZON',        p: 0, w: 0,  d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 },
   ],
   'national-men': [
