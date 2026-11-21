@@ -40,7 +40,7 @@
   .page-hero::before {
     content: '';
     @apply absolute inset-0 opacity-25;
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROiYMD3RiseyLy1FyZr_EOT1XaugYDVXm5EqUk_f3LUw&s=10');
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn9TCDEBzFOXjBTAzjq5gZZKlQ17sAyXnTanYvuMzIBw&s=10');
     background-size: cover;
     background-position: center;
   }
