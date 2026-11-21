@@ -42,8 +42,9 @@ export const clubs = [
 // FIXTURES
 // `comp` is a competition slug. `home` / `away` are club slugs ('TBD' = not set).
 // ----------------------------------------------------------------------------
-export const fixtures = [  
-  { id: 'KHF-001', comp: 'premier-women',  round: 'First leg', home: 'DAYSTAR W',     away: 'JKUAT W', date: '2026-11-28', time: '13:30', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
+export const fixtures = [
+  {
+    id: 'KHF-001',comp: 'premier-women',round: 'First leg',home: 'DAYSTAR W',away: 'JKUAT W',date: '2026-11-28',time: '13:30',venue: 'KALOLENI',status: 'Scheduled',homeScore: 32,awayScore: 23}, // TODO: confirm home team
   { id: 'KHF-001', comp: 'premier-men',  round: 'First leg', home: 'DAYSTAR',     away: 'ULINZI SHOOTERS', date: '2026-11-28', time: '15:00', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
   { id: 'KHF-002', comp: 'premier-men',  round: 'First leg', home: 'GSU',     away: 'STRATHMORE',     date: '2026-11-28', time: '16:30', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
   { id: 'KHF-003', comp: 'premier-women', round: 'First leg', home: 'JKUAT',     away: 'NYS',   date: '2026-11-29', time: '09:00', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
