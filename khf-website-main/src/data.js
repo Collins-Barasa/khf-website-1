@@ -77,7 +77,7 @@ export const players = [
 // ----------------------------------------------------------------------------
 export const standings = {
   'premier-men': [
-    { pos: 1,  club: 'Daystar',          team: 'NCPB',       p: 8,  w: 8, d: 0, l: 0, gf: 386, ga: 161, gd: 225,  pts: 16 },
+{ pos: 1,  club: 'Daystar',          team: 'NCPB',       p: 8,  w: 8, d: 0, l: 0, gf: 386, ga: 161, gd: 225,  pts: 16 },
 { pos: 2,  club: 'equity-men',        team: 'Equity',     p: 6,  w: 6, d: 0, l: 0, gf: 228, ga: 104, gd: 124,  pts: 12 },
 { pos: 3,  club: 'ulinzi-men',        team: 'Ulinzi',     p: 6,  w: 6, d: 0, l: 0, gf: 227, ga: 107, gd: 120,  pts: 12 },
 { pos: 4,  club: 'black-mamba-men',   team: 'Black Mamba',p: 6,  w: 4, d: 0, l: 2, gf: 195, ga: 147, gd: 48,   pts: 8  },
@@ -89,17 +89,17 @@ export const standings = {
 { pos: 10, club: 'kisiwa-tti-men',    team: 'Kisiwa TTI', p: 7,  w: 3, d: 0, l: 4, gf: 209, ga: 243, gd: -34,  pts: 6  },
   ],
   'premier-women': [
-    { pos: 1,  club: 'nairobi-water-women',   team: 'Nairobi Water',   p: 12, w: 12, d: 0, l: 0, gf: 496, ga: 190, gd: 306,  pts: 24 },
-{ pos: 2,  club: 'ncpb-women',            team: 'NCPB',            p: 13, w: 11, d: 0, l: 2, gf: 507, ga: 278, gd: 229,  pts: 22 },
-{ pos: 3,  club: 'ulinzi-sharks-women',   team: 'Ulinzi Sharks',   p: 10, w: 9,  d: 0, l: 1, gf: 423, ga: 181, gd: 242,  pts: 18 },
-{ pos: 4,  club: 'nys-women',             team: 'NYS',             p: 16, w: 6,  d: 2, l: 8, gf: 387, ga: 502, gd: -115, pts: 14 },
-{ pos: 5,  club: 'ku-women',              team: 'KU',              p: 9,  w: 6,  d: 0, l: 3, gf: 258, ga: 234, gd: 24,   pts: 12 },
-{ pos: 6,  club: 'mountain-queens-women', team: 'Mountain Queens', p: 13, w: 5,  d: 0, l: 8, gf: 240, ga: 428, gd: -188, pts: 10 },
-{ pos: 7,  club: 'rising-star-women',     team: 'Rising Star',     p: 13, w: 4,  d: 1, l: 8, gf: 384, ga: 424, gd: -40,  pts: 9  },
-{ pos: 8,  club: 'amazon-women',          team: 'Amazon',          p: 9,  w: 4,  d: 1, l: 4, gf: 230, ga: 292, gd: -62,  pts: 9  },
-{ pos: 9,  club: 'daystar-women',         team: 'Daystar',         p: 15, w: 3,  d: 2, l: 10, gf: 360, ga: 484, gd: -124, pts: 8 },
-{ pos: 10, club: 'jkuat-women',           team: 'J.K.U.A.T',       p: 11, w: 1,  d: 0, l: 10, gf: 233, ga: 338, gd: -105, pts: 2 },
-{ pos: 11, club: 'new-hope-women',        team: 'New Hope',        p: 11, w: 0,  d: 0, l: 11, gf: 179, ga: 406, gd: -227, pts: 0 },
+{ pos: 1,  club: 'KISIWA',   team: 'KISIWA',   p: 2, w: 2, d: 0, l: 0, gf: 59, ga: 39, gd: +39,  pts: 4 },
+{ pos: 2,  club: 'NAIROBI WATER',            team: 'NAIROBI WATER',            p: 1, w: 1, d: 0, l: 0, gf: 45, ga: 17, gd: +28,  pts: 2 },
+{ pos: 3,  club: 'DAYSTAR',   team: 'DAYSTAR',   p: 1, w: 1,  d: 0, l: 0, gf: 37, ga: 13, gd: +24,  pts: 2 },
+{ pos: 4,  club: 'NYS',             team: 'NYS',             p: 1, w: 0,  d: 0, l: 1, gf: 20, ga: 0, gd: -20, pts: 0 },
+{ pos: 5,  club: 'JKUAT',              team: 'JKUAT',              p: 1,  w: 0,  d: 0, l: 1, gf: 17, ga: 0, gd: -28,   pts: 0 },
+{ pos: 6,  club: 'MOUNTAIN QUENS', team: 'MOUNTAIN QUEENS', p: 0, w: 0,  d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 },
+{ pos: 7,  club: 'NCPB',     team: 'NCPB',     p: 0, w: 0,  d: 0, l: 0, gf: 0, ga: 0, gd: 0,  pts: 0  },
+{ pos: 8,  club: 'KU',          team: 'KU',          p: 0,  w: 0,  d: 0, l: 0, gf: 0, ga: 0, gd: -62,  pts: 0  },
+{ pos: 9,  club: 'DESERT SCOORPIONS',         team: 'DESERT SCORPIONS',         p: 0, w: 0,  d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 },
+{ pos: 10, club: 'ULINZI HARKS',           team: 'ULINZI SHARKS',       p: 0, w: 0,  d: 0, l: 0, gf: 233, ga: 0, gd: 0, pts: 0 },
+{ pos: 11, club: 'AMAZON',        team: 'AMAZON',        p: 0, w: 0,  d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 },
   ],
   'national-men': [
     { pos: 1, club: '', team: 'Kenya',   p: 10, w: 8, d: 0, l: 2, gf: 250, ga: 220, gd: 30, pts: 24 },
