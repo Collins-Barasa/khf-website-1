@@ -43,7 +43,7 @@ export const clubs = [
 // `comp` is a competition slug. `home` / `away` are club slugs ('TBD' = not set).
 // ----------------------------------------------------------------------------
 export const fixtures = [
-  { id: 'KHF-001', comp: 'premier-men',  round: 'Round 13', home: 'TBD',     away: 'daystar-men', date: '2026-11-16', time: '15:00', venue: 'Nyayo National Stadium', status: 'Scheduled' }, // TODO: confirm home team
+  { id: 'KHF-001', comp: 'premier-men',  round: 'Round 13', home: 'Daystar',     away: 'Ulinzi-shooters', date: '2026-11-28', time: '15:00', venue: 'Kaloleni', status: 'Scheduled' }, // TODO: confirm home team
   { id: 'KHF-002', comp: 'premier-men',  round: 'Round 13', home: 'TBD',     away: 'gsu-men',     date: '2026-11-16', time: '13:00', venue: 'Nyayo National Stadium', status: 'Scheduled' }, // TODO: confirm home team
   { id: 'KHF-003', comp: 'national-men', round: 'Round 10', home: 'TBD',     away: 'thika-men',   date: '2026-11-17', time: '16:00', venue: 'Nyayo National Stadium', status: 'Scheduled' }, // TODO: confirm home team
   { id: 'KHF-004', comp: 'premier-men',  round: 'Round 12', home: 'TBD',     away: 'kisiwa-men',  date: '2026-11-09', time: '15:00', venue: 'Nyayo National Stadium', status: 'Completed', homeScore: 28, awayScore: 24 }, // TODO: confirm home team
