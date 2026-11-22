@@ -35,9 +35,7 @@
     scroll-padding-top: 6rem;
     background-color: var(--khf-surface);
     color: var(--khf-black);
-    font-family:
-      "Plus Jakarta Sans", "Inter",
-      system-ui, -apple-system, sans-serif;
+   font-family: "Times New Roman", Times, Georgia, serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
