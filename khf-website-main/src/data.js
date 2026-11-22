@@ -96,7 +96,7 @@ export const standings = {
     { pos: 4,  club: 'NYS',              team: 'NYS',              p: 1, w: 0, d: 0, l: 1, gf: 20, ga: 0,  gd: -20, pts: 0 },
     { pos: 5,  club: 'JKUAT',            team: 'JKUAT',            p: 1, w: 0, d: 0, l: 1, gf: 17, ga: 0,  gd: -28, pts: 0 },
     { pos: 6,  club: 'NCPB',             team: 'NCPB',             p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,  gd: 0,   pts: 0 },
-    { pos: 7,  club: 'KU',               team: 'KU',               p: , w: 0, d: 0, l: 0, gf: 0,  ga: 0,  gd: 0,   pts: 0 },
+    { pos: 7,  club: 'KU',               team: 'KU',               p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,  gd: 0,   pts:0},
     { pos: 8,  club: 'DESERT SCOORPIONS',team: 'DESERT SCORPIONS', p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,  gd: 0,   pts: 0 },
     { pos: 9, club: 'ULINZI HARKS',     team: 'ULINZI SHARKS',    p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,  gd: 0,   pts: 0 },
     { pos: 10, club: 'AMAZON',           team: 'AMAZON',           p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,  gd: 0,   pts: 0 },
