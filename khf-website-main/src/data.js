@@ -1,4 +1,9 @@
 // KHF data layer
+//
+// Conventions
+//  - `slug` fields are the single source of truth for joins (clubs <-> fixtures <-> players <-> standings).
+//  - `team` in standings is only a display label; `club` must be a real club slug.
+//  - Standings are sorted by points, then goal difference, then goals for.
 
 export const competitions = [
   { slug: 'premier-men',   name: 'Premier League Men',   type: 'league', gender: 'men',   tier: 1 },
@@ -74,6 +79,8 @@ export const players = [
 // ----------------------------------------------------------------------------
 // STANDINGS — keyed by competition slug
 // `club` is the club slug; `team` is the label shown in the table.
+// Rows below are already in table order (points, goal difference, goals for);
+// getStandings() re-applies that order so a stale `pos` can never leak out.
 // ----------------------------------------------------------------------------
 export const standings = {
   'premier-men': [
@@ -81,8 +88,8 @@ export const standings = {
     { pos: 2,  club: 'ulinzi-men',      team: 'ULINZI',       p: 2, w: 2, d: 0, l: 0, gf: 79, ga: 38,  gd: 41,  pts: 4 },
     { pos: 3,  club: 'equity-men',      team: 'EQUITY',       p: 2, w: 2, d: 0, l: 0, gf: 62, ga: 33,  gd: 29,  pts: 4 },
     { pos: 4,  club: 'black-mamba-men', team: 'BLACK MAMBA',  p: 2, w: 2, d: 0, l: 0, gf: 50, ga: 33,  gd: 17,  pts: 4 },
-    { pos: 5,  club: 'ku-men',          team: 'KU',           p: 2, w: 1, d: 0, l: 1, gf: 41, ga: 47,  gd: -6,  pts: 2 },
-    { pos: 6,  club: 'ncpb-men',        team: 'NCPB',         p: 1, w: 1, d: 0, l: 0, gf: 32, ga: 21,  gd: 11,  pts: 2 },
+    { pos: 5,  club: 'ncpb-men',        team: 'NCPB',         p: 1, w: 1, d: 0, l: 0, gf: 32, ga: 21,  gd: 11,  pts: 2 },
+    { pos: 6,  club: 'ku-men',          team: 'KU',           p: 2, w: 1, d: 0, l: 1, gf: 41, ga: 47,  gd: -6,  pts: 2 },
     { pos: 7,  club: 'strathmore-men',  team: 'STRATHMORE',   p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,   gd: 0,   pts: 0 },
     { pos: 8,  club: 'thika-men',       team: 'THIKA COMBAT', p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,   gd: 0,   pts: 0 },
     { pos: 9,  club: 'daystar-men',     team: 'DAYSTAR',      p: 1, w: 0, d: 0, l: 1, gf: 28, ga: 29,  gd: -1,  pts: 0 },
@@ -94,13 +101,13 @@ export const standings = {
     { pos: 1,  club: 'kisiwa-women',     team: 'KISIWA',           p: 2, w: 2, d: 0, l: 0, gf: 59, ga: 20, gd: 39,  pts: 4 },
     { pos: 2,  club: 'nairobi-water',    team: 'NAIROBI WATER',    p: 1, w: 1, d: 0, l: 0, gf: 45, ga: 17, gd: 28,  pts: 2 },
     { pos: 3,  club: 'daystar-women',    team: 'DAYSTAR',          p: 1, w: 1, d: 0, l: 0, gf: 37, ga: 13, gd: 24,  pts: 2 },
-    { pos: 4,  club: 'nys-women',        team: 'NYS',              p: 1, w: 0, d: 0, l: 1, gf: 20, ga: 40, gd: -20, pts: 0 },
-    { pos: 5,  club: 'jkuat-women',      team: 'JKUAT',            p: 1, w: 0, d: 0, l: 1, gf: 17, ga: 45, gd: -28, pts: 0 },
-    { pos: 6,  club: 'ncpb-women',       team: 'NCPB',             p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,  gd: 0,   pts: 0 },
-    { pos: 7,  club: 'ku-ladies',        team: 'KU-ladies',        p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,  gd: 0,   pts: 0 },
-    { pos: 8,  club: 'desert-scorpions', team: 'DESERT SCORPIONS', p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,  gd: 0,   pts: 0 },
-    { pos: 9,  club: 'ulinzi-sharks',    team: 'ULINZI SHARKS',    p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,  gd: 0,   pts: 0 },
-    { pos: 10, club: 'amazon-women',     team: 'AMAZON',           p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,  gd: 0,   pts: 0 },
+    { pos: 4,  club: 'ncpb-women',       team: 'NCPB',             p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,  gd: 0,   pts: 0 },
+    { pos: 5,  club: 'ku-ladies',        team: 'KU LADIES',        p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,  gd: 0,   pts: 0 },
+    { pos: 6,  club: 'desert-scorpions', team: 'DESERT SCORPIONS', p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,  gd: 0,   pts: 0 },
+    { pos: 7,  club: 'ulinzi-sharks',    team: 'ULINZI SHARKS',    p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,  gd: 0,   pts: 0 },
+    { pos: 8,  club: 'amazon-women',     team: 'AMAZON',           p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,  gd: 0,   pts: 0 },
+    { pos: 9,  club: 'nys-women',        team: 'NYS',              p: 1, w: 0, d: 0, l: 1, gf: 20, ga: 40, gd: -20, pts: 0 },
+    { pos: 10, club: 'jkuat-women',      team: 'JKUAT',            p: 1, w: 0, d: 0, l: 1, gf: 17, ga: 45, gd: -28, pts: 0 },
   ],
   'national-men': [
     { pos: 1, club: '', team: 'Kenya',   p: 10, w: 8, d: 0, l: 2, gf: 250, ga: 220, gd: 30, pts: 24 },
@@ -142,5 +149,13 @@ export const competitionBySlug = Object.fromEntries(competitions.map((c) => [c.s
 export const getClub = (slug) => clubBySlug[slug] ?? null;
 export const getCompetition = (slug) => competitionBySlug[slug] ?? null;
 export const getClubsByLeague = (slug) => clubs.filter((c) => c.league === slug);
-export const getStandings = (slug) => standings[slug] ?? [];
+
+const compareRows = (a, b) => b.pts - a.pts || b.gd - a.gd || b.gf - a.gf;
+
+// Always returns rows in table order with a fresh 1..n `pos`.
+export const getStandings = (slug) =>
+  [...(standings[slug] ?? [])]
+    .sort(compareRows)
+    .map((row, i) => ({ ...row, pos: i + 1 }));
+
 export const getFixturesByComp = (slug) => fixtures.filter((f) => f.comp === slug);
