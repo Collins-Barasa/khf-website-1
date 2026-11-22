@@ -130,7 +130,6 @@ export const partners = [
 export const gallery = [
   'https://www.michezoafrika.com/newsimages/GSU-VS-THIKA-.JPG',
   'https://www.michezoafrika.com/newsimages/COACH-MWATHI-2.JPG',
-  'images/handball-match.jpg'
   ];
 
 // ============================================================================
