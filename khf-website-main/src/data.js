@@ -130,6 +130,7 @@ export const partners = [
 export const gallery = [
   'https://www.michezoafrika.com/newsimages/GSU-VS-THIKA-.JPG',
   'https://www.michezoafrika.com/newsimages/COACH-MWATHI-2.JPG',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9jpH1W08OMM4ce08BmR3IWlRLd9PeidfsdsPcSgrhaw&s=10',
   ];
 
 // ============================================================================
