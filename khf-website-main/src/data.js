@@ -1,9 +1,4 @@
 // KHF data layer
-//
-// Conventions
-//  - `slug` fields are the single source of truth for joins (clubs <-> fixtures <-> players <-> standings).
-//  - `team` in standings is only a display label; `club` must be a real club slug.
-//  - Standings are sorted by points, then goal difference, then goals for.
 
 export const competitions = [
   { slug: 'premier-men',   name: 'Premier League Men',   type: 'league', gender: 'men',   tier: 1 },
@@ -88,8 +83,8 @@ export const standings = {
     { pos: 2,  club: 'ulinzi-men',      team: 'ULINZI',       p: 2, w: 2, d: 0, l: 0, gf: 79, ga: 38,  gd: 41,  pts: 4 },
     { pos: 3,  club: 'equity-men',      team: 'EQUITY',       p: 2, w: 2, d: 0, l: 0, gf: 62, ga: 33,  gd: 29,  pts: 4 },
     { pos: 4,  club: 'black-mamba-men', team: 'BLACK MAMBA',  p: 2, w: 2, d: 0, l: 0, gf: 50, ga: 33,  gd: 17,  pts: 4 },
+      { pos: 6,  club: 'ku-men',          team: 'KU',           p: 2, w: 1, d: 0, l: 1, gf: 41, ga: 47,  gd: -6,  pts: 2 },
     { pos: 5,  club: 'ncpb-men',        team: 'NCPB',         p: 1, w: 1, d: 0, l: 0, gf: 32, ga: 21,  gd: 11,  pts: 2 },
-    { pos: 6,  club: 'ku-men',          team: 'KU',           p: 2, w: 1, d: 0, l: 1, gf: 41, ga: 47,  gd: -6,  pts: 2 },
     { pos: 7,  club: 'strathmore-men',  team: 'STRATHMORE',   p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,   gd: 0,   pts: 0 },
     { pos: 8,  club: 'thika-men',       team: 'THIKA COMBAT', p: 0, w: 0, d: 0, l: 0, gf: 0,  ga: 0,   gd: 0,   pts: 0 },
     { pos: 9,  club: 'daystar-men',     team: 'DAYSTAR',      p: 1, w: 0, d: 0, l: 1, gf: 28, ga: 29,  gd: -1,  pts: 0 },
