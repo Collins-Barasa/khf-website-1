@@ -31,7 +31,7 @@ export function header(activePath) {
   <header class="sticky top-0 z-40 bg-khf-black/95 backdrop-blur border-b-2 border-khf-red">
     <div class="container-x flex items-center justify-between gap-4 py-2.5 flex-wrap">
       <a href="#/" class="flex items-center gap-2.5">
-        <div class="w-11 h-11 rounded-full bg-gradient-to-br from-khf-red to-khf-green text-white font-head font-extrabold text-lg grid place-items-center border-2 border-white">KHF</div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL5MMx4mFSH-86-XpVUBpgGr3f7yhkn-wShhgewEe5Tw&s=10" alt="KHF" class="w-11 h-11 rounded-full object-contain bg-white p-0.5 border-2 border-white shrink-0" />
         <div class="leading-tight">
           <strong class="block text-white font-head text-lg tracking-wide">Kenya Handball</strong>
           <span class="block text-khf-red text-[10px] font-semibold tracking-[2px] uppercase">Federation</span>
