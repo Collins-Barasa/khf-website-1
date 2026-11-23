@@ -76,12 +76,9 @@ function side(ref) {
     : `<span class="font-semibold text-sm">${esc(label)}</span>`;
 }
 
-/** image area with a deliberate-looking fallback instead of a broken <img> */
+/** standard image tag that renders directly regardless of URL format */
 function mediaBox(url, label = 'KHF') {
-  const ok = isImageUrl(url);
-  return `<div class="w-full aspect-video bg-cover bg-center relative" style="background-image:${bg(url)}">
-      ${ok ? '' : `<span class="absolute inset-0 grid place-items-center text-white/25 font-head text-xl uppercase tracking-[4px]">${esc(label)}</span>`}
-    </div>`;
+  return `<img src="${esc(url ?? '')}" alt="${esc(label)}" class="w-full aspect-video object-cover block" />`;
 }
 
 const playerBlurb = (p) => {
@@ -109,7 +106,8 @@ export default function home() {
   const featuredPlayers = players.slice(0, 2);
 
   return `
-  <!-- HERO -->
+  
+<!-- HERO -->
   <section class="relative min-h-[85vh] flex items-center overflow-hidden">
     <div class="absolute inset-0">
       <div class="hero-slide absolute inset-0 bg-cover bg-center opacity-100 transition-opacity duration-1000" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHPI7M-Vj5VMOWjUai_jS5RliRvXjeSCKlh-YJs9b1wQ&s')"></div>
@@ -118,7 +116,10 @@ export default function home() {
     </div>
     <div class="absolute inset-0 bg-gradient-to-r from-khf-black/95 via-khf-black/65 to-khf-black/20"></div>
     <div class="relative container-x text-white py-16 max-w-3xl">
-      <p class="text-khf-gold font-bold uppercase tracking-[3px] text-xs mb-4">Kenya Handball Federation</p>
+      <div class="flex items-center gap-3 mb-4">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL5MMx4mFSH-86-XpVUBpgGr3f7yhkn-wShhgewEe5Tw&s=10" alt="KHF" class="h-14 w-14 object-contain rounded-full bg-white p-1" />
+        <p class="text-khf-gold font-bold uppercase tracking-[3px] text-xs">Kenya Handball Federation</p>
+      </div>
       <h1 class="font-head text-5xl md:text-7xl uppercase leading-none mb-5">Passion. Performance. Pride.</h1>
       <p class="text-lg text-slate-300 max-w-xl mb-8">The official digital home of handball in Kenya — competitions, national teams, clubs, players and development.</p>
       <div class="flex flex-wrap gap-3">
@@ -128,7 +129,6 @@ export default function home() {
       </div>
     </div>
   </section>
-
   <!-- NEWS -->
   <section class="py-16">
     <div class="container-x">
