@@ -51,7 +51,7 @@
   .page-hero::before {
     content: '';
     @apply absolute inset-0 opacity-30;
-    background-image: url('https://images.unsplash.com/photo-1547347298-4074fc3086f0?w=1600&q=80');
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCDSVCy-cTTbI-kza50Zt5NfeM-X7UkOsuojBLjORRoQ&s=10');
     background-size: cover;
     background-position: center;
   }
@@ -65,7 +65,50 @@
   .site-footer { @apply bg-[#4d0d2e] text-[#f5e7ef] py-10 border-t-4 border-[#15803d]; }
   .site-footer a { @apply text-white underline underline-offset-2 hover:text-[#f5e7ef]; }
 }
-/* Burgundy header */
+/* ===== KHF header: burgundy + Kenyan divider ===== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: #66113d !important;
+  color: #fff;
+  border-bottom: 0 !important;
+  position: relative;
+}
+
+/* divider: white → green → black */
+header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5px;
+  background: linear-gradient(
+    to right,
+    #fff 0 33.34%,
+    #15803d 33.34% 66.67%,
+    #000 66.67% 100%
+  );
+}
+
+/* nav */
+header nav a {
+  color: #fff !important;
+  border-radius: 6px;
+  padding: 8px 12px;
+  transition: background-color 160ms ease;
+}
+
+header nav a:hover {
+  background: rgb(255 255 255 / 14%);
+}
+
+header nav a.active,
+header nav a[aria-current="page"] {
+  background: rgb(255 255 255 / 20%);
+}
+/* Burgundy header
 .main-header {
   background: #66113d;
   color: #fff;
@@ -86,3 +129,4 @@
 .main-header nav a:hover {
   background: rgb(255 255 255 / 12%);
 }
+ */
