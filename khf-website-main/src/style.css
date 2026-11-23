@@ -108,6 +108,23 @@ header nav a.active,
 header nav a[aria-current="page"] {
   background: rgb(255 255 255 / 20%);
 }
+/* divider: black → white → red → white → green */
+header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5px;
+  background: linear-gradient(
+    to right,
+    #000 0 33.33%,
+    #fff 33.33% 41.67%,
+    #bb0000 41.67% 66.67%,
+    #fff 66.67% 75%,
+    #15803d 75% 100%
+  );
+}
 /* Burgundy header
 .main-header {
   background: #66113d;
