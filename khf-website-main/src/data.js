@@ -43,13 +43,13 @@ export const clubs = [
 // `comp` is a competition slug. `home` / `away` are club slugs ('TBD' = not set).
 // ----------------------------------------------------------------------------
 export const fixtures = [
-  { id: 'KHF-001', comp: 'premier-women', round: 'First leg', home: 'daystar-women', away: 'jkuat-women',    date: '2026-11-28', time: '13:30', venue: 'KALOLENI', status: 'Completed', homeScore: 32, awayScore: 23 }, // TODO: confirm home team & status
-  { id: 'KHF-002', comp: 'premier-men',   round: 'First leg', home: 'daystar-men',   away: 'ulinzi-men',     date: '2026-11-28', time: '15:00', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
-  { id: 'KHF-003', comp: 'premier-men',   round: 'First leg', home: 'gsu-men',       away: 'strathmore-men', date: '2026-11-28', time: '16:30', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
-  { id: 'KHF-004', comp: 'premier-women', round: 'First leg', home: 'jkuat-women',   away: 'nys-women',      date: '2026-11-29', time: '09:00', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
-  { id: 'KHF-005', comp: 'premier-women', round: 'First leg', home: 'daystar-women', away: 'ku-ladies',      date: '2026-11-29', time: '13:30', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
-  { id: 'KHF-006', comp: 'premier-men',   round: 'First leg', home: 'ku-men',        away: 'daystar-men',    date: '2026-11-29', time: '15:00', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
-  { id: 'KHF-007', comp: 'premier-men',   round: 'First leg', home: 'equity-men',    away: 'strathmore-men', date: '2026-11-29', time: '16:30', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
+  { id: 'KHF-001', comp: 'premier-women', round: 'First leg', home: 'DAYSTAR-women', away: 'JKUAT-women',    date: '2026-11-28', time: '13:30', venue: 'KALOLENI', status: 'Completed', homeScore: , awayScore:  }, // TODO: confirm home team & status
+  { id: 'KHF-002', comp: 'premier-men',   round: 'First leg', home: 'DAYSTAR-men',   away: 'ULINZI-men',     date: '2026-11-28', time: '15:00', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
+  { id: 'KHF-003', comp: 'premier-men',   round: 'First leg', home: 'GSU-men',       away: 'STRATHMORE', date: '2026-11-28', time: '16:30', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
+  { id: 'KHF-004', comp: 'premier-women', round: 'First leg', home: 'JKUAT-women',   away: 'NYS-women',      date: '2026-11-29', time: '09:00', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
+  { id: 'KHF-005', comp: 'premier-women', round: 'First leg', home: 'DAYSTAR-women', away: 'KU-ladies',      date: '2026-11-29', time: '13:30', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
+  { id: 'KHF-006', comp: 'premier-men',   round: 'First leg', home: 'KU-men',        away: 'DAYSTAR-men',    date: '2026-11-29', time: '15:00', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
+  { id: 'KHF-007', comp: 'premier-men',   round: 'First leg', home: 'EQUITY-men',    away: 'STRATHMORE-men', date: '2026-11-29', time: '16:30', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
 ];
 
 // ----------------------------------------------------------------------------
