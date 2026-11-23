@@ -1,6 +1,5 @@
 /* ==================================================
    KHF DESIGN SYSTEM  ·  Tailwind v3 (Vite)
-   Full replacement for src/style.css
    ================================================== */
 
 @tailwind base;
@@ -16,6 +15,9 @@
 
   --khf-border: #e2e8f0;
   --khf-muted: #64748b;
+  --khf-font: 'Times New Roman', Times, serif;
+  /* Set to url(...) in your site CSS when an approved action photo is available. */
+  --khf-hero-image: none;
 
   --khf-shadow-sm: 0 2px 8px rgb(15 23 42 / 4%);
   --khf-shadow-md: 0 8px 24px rgb(15 23 42 / 6%), 0 2px 6px rgb(15 23 42 / 3%);
@@ -30,7 +32,7 @@
     scroll-padding-top: 6rem;
     background-color: var(--khf-surface);
     color: var(--khf-black);
-    font-family: 'Times New Roman', Times, serif;
+    font-family: var(--khf-font);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -38,6 +40,8 @@
   body {
     margin: 0;
     min-height: 100vh;
+    font-family: var(--khf-font);
+    font-size: 1rem;
     line-height: 1.65;
     background-image: radial-gradient(ellipse at top right, rgb(21 128 61 / 4%), transparent 45%);
   }
@@ -47,7 +51,7 @@
   h3,
   h4,
   .font-head {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: var(--khf-font);
     letter-spacing: 0.025em;
     line-height: 1.15;
   }
@@ -117,13 +121,13 @@
   /* Sticky header */
   .main-header {
     @apply sticky top-0 z-40;
-    color: hsl(0, 81%, 69%);
-    background: linear-gradient(110deg,
-      #020617 0%, #020617 32%,
-      #fff 32%, #fff 33%,
-      var(--khf-red) 33%, var(--khf-red) 66%,
-      #fff 66%, #fff 67%,
-      var(--khf-green) 67%, var(--khf-green) 100%);
+    color: #fff;
+    background: linear-gradient(to bottom,
+      #020617 0%, #020617 30%,
+      #fff 30%, #fff 33%,
+      var(--khf-red) 33%, var(--khf-red) 63%,
+      #fff 63%, #fff 66%,
+      var(--khf-green) 66%, var(--khf-green) 100%);
     border-bottom: 4px solid var(--khf-green);
     box-shadow: 0 5px 20px rgb(15 23 42 / 15%);
   }
@@ -136,12 +140,19 @@
   .main-header h3,
   .main-header button {
     color: #fff;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: var(--khf-font);
     text-shadow: 0 1px 3px rgb(0 0 0 / 75%);
   }
 
   .main-header nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.55rem 0.8rem;
     border-radius: 0.5rem;
+    background-color: #0f172a;
+    font-size: 1rem;
+    text-shadow: none;
     transition: background-color 180ms ease;
   }
 
@@ -149,7 +160,7 @@
   .main-header nav a[aria-current="page"],
   .main-header nav a.active {
     color: #fff;
-    background-color: rgb(2 6 23 / 65%);
+    background-color: #166534;
   }
 
   .main-header :focus-visible {
@@ -164,7 +175,7 @@
   /* Section headings */
   .section-title {
     @apply relative pl-5 font-bold uppercase text-slate-900;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: var(--khf-font);
     font-size: clamp(1.5rem, 1.15rem + 1vw, 2.15rem);
     letter-spacing: 0.035em;
     line-height: 1.2;
@@ -424,7 +435,7 @@
     padding-bottom: clamp(3.5rem, 7vw, 6rem);
     color: #fff;
     background-color: #020617;
-    border-bottom: 4px solid var(--khf-red);
+    border-bottom: 4px solid var(--khf-green);
   }
 
   .page-hero::before {
@@ -433,7 +444,7 @@
     inset: 0;
     z-index: -2;
     pointer-events: none;
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn9TCDEBzFOXjBTAzjq5gZZKlQ17sAyXnTanYvuMzIBw&s=10');
+    background-image: var(--khf-hero-image);
     background-size: cover;
     background-position: center;
     opacity: 0.3;
@@ -541,4 +552,293 @@
   .status-live::before {
     animation: none;
   }
+}
+
+/* ---------- DOCUMENT-ALIGNED MODULE STYLES ----------
+   Optional classes below need matching markup. CSS does not create pages,
+   approve results, calculate standings or provide a secure dashboard.
+   The document does not prescribe a font or exact brand hex values.
+   Times New Roman and the existing KHF colours follow the user's choices.
+*/
+@layer components {
+  .skip-link {
+    position: fixed;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 100;
+    padding: 0.75rem 1rem;
+    background: #fff;
+    color: #0f172a;
+    transform: translateY(-200%);
+  }
+  .skip-link:focus { transform: translateY(0); }
+
+  .header-layout {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    padding-block: 1rem;
+  }
+  .header-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-width: 0;
+  }
+  .header-logo {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+  }
+  .header-brand-text {
+    padding: 0.4rem 0.65rem;
+    background: #0f172a;
+    border-radius: 0.5rem;
+    color: #fff;
+  }
+  .main-header nav { min-width: 0; max-width: 100%; }
+  /* A two-row/wrapping layout accommodates all 14 menu entries. */
+  .main-header nav > ul,
+  .main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .section-block { padding-block: clamp(2rem, 5vw, 4rem); }
+  .section-heading-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .section-intro { max-width: 65ch; color: #475569; }
+  .content-grid,
+  .competition-grid,
+  .team-grid,
+  .news-grid,
+  .media-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+  }
+  .content-grid > *,
+  .competition-grid > *,
+  .team-grid > *,
+  .news-grid > *,
+  .media-grid > * { min-width: 0; }
+
+  /* Use the same card treatment and grid space for men's and women's teams. */
+  .competition-card,
+  .team-card,
+  .news-card {
+    background: #fff;
+    border: 1px solid var(--khf-border);
+    border-top: 4px solid var(--khf-green);
+    border-radius: 0.85rem;
+    overflow: hidden;
+    box-shadow: var(--khf-shadow-sm);
+  }
+  .card-body { padding: 1.25rem; }
+  .card-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    color: #475569;
+    font-size: 0.9375rem;
+  }
+  .article-body { max-width: 75ch; line-height: 1.8; }
+  .article-body a,
+  .resource-link,
+  .table-mini td a {
+    color: #166534;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .hero-slogan {
+    font-size: clamp(1.25rem, 3vw, 2rem);
+    font-weight: 700;
+    color: #fff;
+  }
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 1rem;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    background: #fff;
+    border: 1px solid var(--khf-border);
+    border-radius: 0.85rem;
+  }
+  .filter-field { flex: 1 1 180px; min-width: 0; }
+  .filter-field label,
+  .form-field label { display: block; margin-bottom: 0.4rem; font-weight: 700; }
+  .form-control {
+    width: 100%;
+    min-height: 44px;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid #94a3b8;
+    border-radius: 0.5rem;
+    background: #fff;
+    color: #0f172a;
+    font-family: var(--khf-font);
+    font-size: 1rem;
+  }
+  .form-control::placeholder { color: #64748b; }
+  .form-help { margin-top: 0.4rem; font-size: 0.9375rem; color: #475569; }
+  .form-error { color: #991b1b; font-weight: 700; }
+
+  /* All eight statuses required by the document; keep visible text labels. */
+  .status-rescheduled,
+  .status-abandoned,
+  .status-awarded,
+  .status-forfeited {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.65rem;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+  .status-rescheduled { background: #ede9fe; color: #5b21b6; }
+  .status-abandoned { background: #e2e8f0; color: #334155; }
+  .status-awarded,
+  .status-forfeited { background: #fef3c7; color: #92400e; }
+  .fixture-meta { color: #475569; font-size: 0.9375rem; }
+  .match-teams {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: 0.75rem;
+    align-items: center;
+    font-weight: 700;
+  }
+  .match-teams > :last-child { text-align: right; }
+  .match-score { color: #0f172a; font-size: 1.5rem; font-weight: 700; }
+  .fixture-notice,
+  .empty-state {
+    padding: 1rem;
+    background: #f8fafc;
+    border: 1px solid var(--khf-border);
+    border-left: 4px solid var(--khf-green);
+    border-radius: 0.5rem;
+    color: #334155;
+  }
+  .table-mini th { font-size: 0.8125rem; }
+  .table-mini td { font-size: 0.9375rem; }
+  .table-mini caption {
+    padding-block: 0.75rem;
+    text-align: left;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .table-scroll:focus-visible { outline-offset: -3px; }
+
+  .stat-grid,
+  .sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .stat-card {
+    padding: 1.25rem;
+    background: #fff;
+    border: 1px solid var(--khf-border);
+    border-radius: 0.75rem;
+  }
+  .stat-value { display: block; color: #166534; font-size: 2rem; font-weight: 700; }
+  .stat-label { color: #475569; }
+  .sponsor-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: #fff;
+    border: 1px solid var(--khf-border);
+    border-radius: 0.75rem;
+    text-align: center;
+  }
+  .sponsor-logo { width: 140px; height: 80px; object-fit: contain; }
+  .resource-list { list-style: none; margin: 0; padding: 0; }
+  .resource-list li { padding-block: 1rem; border-bottom: 1px solid var(--khf-border); }
+  .resource-link { display: inline-flex; align-items: center; min-height: 44px; gap: 0.5rem; }
+  .media-frame { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 0.75rem; }
+
+  .site-footer {
+    padding-block: 2.5rem;
+    color: #e2e8f0;
+    background: #020617;
+    border-top: 4px solid var(--khf-green);
+  }
+  .site-footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+  .footer-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .social-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+  .social-links a { display: inline-flex; align-items: center; min-height: 44px; padding: 0.5rem; }
+}
+
+/* Preserve the requested font even when existing markup uses font utilities. */
+@layer utilities {
+  .font-sans,
+  .font-serif,
+  .font-head { font-family: var(--khf-font); }
+}
+
+@media (min-width: 640px) {
+  .content-grid,
+  .team-grid,
+  .news-grid,
+  .media-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sponsor-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 992px) {
+  .competition-grid,
+  .news-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .header-layout > nav { flex-basis: 100%; }
+  .stat-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .sponsor-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .footer-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 991px) {
+  /* Visible wrapping navigation by default; no non-functional hamburger. */
+  .main-header { position: relative; }
+  .header-layout > nav { flex-basis: 100%; }
+}
+@media (max-width: 560px) {
+  .header-logo { width: 48px; height: 48px; }
+  .main-header nav a { padding-inline: 0.65rem; }
+  .stat-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .main-header nav a { transition: none; }
 }
