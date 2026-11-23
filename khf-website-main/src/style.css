@@ -1,5 +1,6 @@
 /* ==================================================
    KHF DESIGN SYSTEM  ·  Tailwind v3 (Vite)
+   Guideline-aligned stylesheet; existing class names preserved
    ================================================== */
 
 @tailwind base;
@@ -8,7 +9,8 @@
 
 :root {
   --khf-black: #0f172a;
-  --khf-dark: #111827;
+  --khf-dark: #4f0d2f;
+  --khf-burgundy: #66113d;
   --khf-red: #dc2626;
   --khf-green: #15803d;
   --khf-surface: #f8fafc;
@@ -82,13 +84,14 @@
 /* ---------- COMPONENTS ---------- */
 
 @layer components {
-  /* Kenyan flag accent */
+  /* Kenyan-inspired accent with the requested burgundy replacing black */
   .kenya-flag-bar {
     @apply grid w-full grid-cols-12 h-[5px];
   }
 
   .kenya-flag-bar .flag-black {
-    @apply col-span-4 bg-slate-950;
+    @apply col-span-4;
+    background-color: var(--khf-burgundy);
   }
 
   .kenya-flag-bar .flag-white-1,
@@ -107,7 +110,7 @@
   /* Utility bar */
   .top-utility-bar {
     @apply text-xs text-slate-300 border-b border-slate-800;
-    background: linear-gradient(110deg, #020617, #172033);
+    background: linear-gradient(110deg, #66113d, #4f0d2f);
   }
 
   .top-utility-bar a {
@@ -123,7 +126,7 @@
     @apply sticky top-0 z-40;
     color: #fff;
     background: linear-gradient(to bottom,
-      #020617 0%, #020617 30%,
+      #66113d 0%, #66113d 30%,
       #fff 30%, #fff 33%,
       var(--khf-red) 33%, var(--khf-red) 63%,
       #fff 63%, #fff 66%,
@@ -150,7 +153,7 @@
     min-height: 44px;
     padding: 0.55rem 0.8rem;
     border-radius: 0.5rem;
-    background-color: #0f172a;
+    background-color: var(--khf-burgundy);
     font-size: 1rem;
     text-shadow: none;
     transition: background-color 180ms ease;
@@ -223,12 +226,12 @@
 
   .btn-dark {
     @apply btn text-white;
-    background: linear-gradient(135deg, #1e293b, #0f172a);
+    background: linear-gradient(135deg, #66113d, #4f0d2f);
     box-shadow: 0 5px 14px rgb(15 23 42 / 15%);
   }
 
   .btn-dark:hover {
-    background: linear-gradient(135deg, #0f172a, #020617);
+    background: linear-gradient(135deg, #4f0d2f, #3d0a24);
     box-shadow: 0 8px 22px rgb(15 23 42 / 24%);
   }
 
@@ -434,7 +437,7 @@
     padding-top: clamp(3.5rem, 7vw, 6rem);
     padding-bottom: clamp(3.5rem, 7vw, 6rem);
     color: #fff;
-    background-color: #020617;
+    background-color: #66113d;
     border-bottom: 4px solid var(--khf-green);
   }
 
@@ -456,7 +459,7 @@
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background-image: radial-gradient(ellipse at bottom right, rgb(21 128 61 / 22%), transparent 55%), linear-gradient(100deg, rgb(2 6 23 / 95%) 0%, rgb(2 6 23 / 70%) 50%, rgb(2 6 23 / 35%) 100%);
+    background-image: radial-gradient(ellipse at bottom right, rgb(21 128 61 / 22%), transparent 55%), linear-gradient(100deg, rgb(102 17 61 / 95%) 0%, rgb(102 17 61 / 70%) 50%, rgb(102 17 61 / 35%) 100%);
   }
 
   .page-hero > * {
@@ -558,7 +561,7 @@
    Optional classes below need matching markup. CSS does not create pages,
    approve results, calculate standings or provide a secure dashboard.
    The document does not prescribe a font or exact brand hex values.
-   Times New Roman and the existing KHF colours follow the user's choices.
+   Times New Roman and the burgundy accent follow the user's choices.
 */
 @layer components {
   .skip-link {
@@ -596,7 +599,7 @@
   }
   .header-brand-text {
     padding: 0.4rem 0.65rem;
-    background: #0f172a;
+    background: var(--khf-burgundy);
     border-radius: 0.5rem;
     color: #fff;
   }
@@ -797,7 +800,7 @@
   .site-footer {
     padding-block: 2.5rem;
     color: #e2e8f0;
-    background: #020617;
+    background: #66113d;
     border-top: 4px solid var(--khf-green);
   }
   .site-footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
