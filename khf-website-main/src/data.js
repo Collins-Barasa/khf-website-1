@@ -34,7 +34,6 @@ export const clubs = [
   { id: 20, slug: 'amazon-women',     name: 'Amazon HC',             short: 'Amazon',        fullName: 'Amazon Handball Club',                                 location: 'Nairobi',  category: 'Senior Women', league: 'premier-women' },
   { id: 21, slug: 'desert-scorpions', name: 'Desert Scorpions',      short: 'Scorpions',     fullName: 'Desert Scorpion Women',                                location: 'Thika',    category: 'Senior Women', league: 'premier-women' },
   { id: 22, slug: 'jkuat-women',      name: 'JKUAT',                 short: 'JKUAT',         fullName: 'Jomo Kenyatta University of Agriculture & Technology', location: 'Juja',     category: 'Senior Women', league: 'premier-women' },
-  { id: 23, slug: 'mountain-queens',  name: 'Mountain Queens',       short: 'M. Queens',     fullName: 'Mountain Queens',                                      location: 'Machakos', category: 'Senior Women', league: 'premier-women' },
   { id: 24, slug: 'ulinzi-sharks',    name: 'Ulinzi Sharks',         short: 'Sharks',        fullName: 'Ulinzi Sharks Handball Club',                          location: 'Langata',  category: 'Senior Women', league: 'premier-women' },
 ];
 
@@ -43,7 +42,7 @@ export const clubs = [
 // `comp` is a competition slug. `home` / `away` are club slugs ('TBD' = not set).
 // ----------------------------------------------------------------------------
 export const fixtures = [
-  { id: 'KHF-001', comp: 'premier-women', round: 'First leg', home: 'DAYSTAR-women', away: 'JKUAT-women',    date: '2026-11-28', time: '13:30', venue: 'KALOLENI', status: 'Completed', homeScore: , awayScore:  }, // TODO: confirm home team & status
+  { id: 'KHF-001', comp: 'premier-women', round: 'First leg', home: 'DAYSTAR-women', away: 'JKUAT-women',    date: '2026-11-28', time: '13:30', venue: 'KALOLENI', status: 'Completed', : , :  }, // TODO: confirm home team & status
   { id: 'KHF-002', comp: 'premier-men',   round: 'First leg', home: 'DAYSTAR-men',   away: 'ULINZI-men',     date: '2026-11-28', time: '15:00', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
   { id: 'KHF-003', comp: 'premier-men',   round: 'First leg', home: 'GSU-men',       away: 'STRATHMORE', date: '2026-11-28', time: '16:30', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
   { id: 'KHF-004', comp: 'premier-women', round: 'First leg', home: 'JKUAT-women',   away: 'NYS-women',      date: '2026-11-29', time: '09:00', venue: 'KALOLENI', status: 'Scheduled' }, // TODO: confirm home team
